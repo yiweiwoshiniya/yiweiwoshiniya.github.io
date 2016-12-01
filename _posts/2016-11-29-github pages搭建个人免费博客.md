@@ -155,6 +155,8 @@ rvm use 2.2.0 --default
 
 * 查看 ```rvm list``` 就可以看到当前默认的是我们自己的ruby版本。```ruby -v``` 也可以看到使我们自己的的ruby版本。
 
+![](/images/posts/使用github pages搭建个人免费博客/image11.png)
+
 #### **安装jekyll**
 
 * 首先，我们需要切换rubygem仓库镜像地址
@@ -170,7 +172,7 @@ sudo gem sources -a https://gems.ruby-china.org/
 gem update --system
 ~~~
 
-![](/images/posts/使用github pages搭建个人免费博客/image11.png)
+![](/images/posts/使用github pages搭建个人免费博客/image12.png)
 
 * 执行下面的命令安装jekyll
 
@@ -214,7 +216,7 @@ bundle install
 jekyll server
 ~~~
 
-![](/images/posts/使用github pages搭建个人免费博客/image12.png)
+![](/images/posts/使用github pages搭建个人免费博客/image13.png)
 
 控制台提示: Server address: http://127.0.0.1:4000/，将这个地址粘贴到浏览器中请求看看，你的博客出来了。
 
