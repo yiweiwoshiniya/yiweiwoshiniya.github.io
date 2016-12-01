@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>Markdown 语法和 MWeb 写作使用说明</title>
+  <meta name="description" content="Markdown 的设计哲学">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Markdown 语法和 MWeb 写作使用说明">
+  <meta name="twitter:description" content="Markdown 的设计哲学">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Markdown 语法和 MWeb 写作使用说明">
+  <meta property="og:description" content="Markdown 的设计哲学">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://yiweiwoshiniya.github.io/2016/11/Markdown-%E8%AF%AD%E6%B3%95%E5%92%8C-MWeb-%E5%86%99%E4%BD%9C%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/">
+  <link rel="alternate" type="application/rss+xml" title="Yiweiwoshiniya" href="https://yiweiwoshiniya.github.io/feed.xml">
+  
+  <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
+
+  <!-- 站点统计 -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c5df621e52fed76679837920c9b8133d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-88106816-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 Yiweiwoshiniya 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                以为我是你呀
+                            
+                        </h2>
+                        <p>
+                           
+                                iOS / 读书笔记
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Yiweiwoshiniya" class="blog-button">Yiweiwoshiniya</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">博客</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎访问我的个人博客</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">Markdown 语法和 MWeb 写作使用说明</h1>
+    <div class="post-meta">
+      <time datetime="2016-11-29 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-11-29</time>
+     
+      <!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+      <span id="busuanzi_container_page_pv">　　阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+    <h2 id="markdown-">Markdown 的设计哲学</h2>
+
+<blockquote>
+  <p>Markdown 的目標是實現「易讀易寫」。
+不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。
+Markdown 的語法有個主要的目的：用來作為一種網路內容的<em>寫作</em>用語言。</p>
+</blockquote>
+
+<!-- more -->
+
+<h2 id="section">本文约定</h2>
+
+<p>如果有写 <code class="highlighter-rouge">效果如下：</code>， 在 MWeb 编辑状态下只有用 <code class="highlighter-rouge">CMD + R</code> 预览才可以看效果。</p>
+
+<h2 id="section-1">标题</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+# 第一级标题 `&lt;h1&gt;` 
+## 第二级标题 `&lt;h2&gt;` 
+###### 第六级标题 `&lt;h6&gt;` 
+</code></p>
+
+<p>效果如下：</p>
+
+<h1 id="h1">第一级标题 <code class="highlighter-rouge">&lt;h1&gt;</code></h1>
+<p>## 第二级标题 <code class="highlighter-rouge">&lt;h2&gt;</code> 
+###### 第六级标题 <code class="highlighter-rouge">&lt;h6&gt;</code></p>
+
+<h2 id="section-2">强调</h2>
+
+<p>Markdown 语法：</p>
+
+<p>```
+<em>这些文字会生成<code class="highlighter-rouge">&lt;em&gt;</code></em>
+<em>这些文字会生成<code class="highlighter-rouge">&lt;u&gt;</code></em></p>
+
+<p><strong>这些文字会生成<code class="highlighter-rouge">&lt;strong&gt;</code></strong>
+<strong>这些文字会生成<code class="highlighter-rouge">&lt;strong&gt;</code></strong>
+```</p>
+
+<p>在 MWeb 中的快捷键为： <code class="highlighter-rouge">CMD + U</code>、<code class="highlighter-rouge">CMD + I</code>、<code class="highlighter-rouge">CMD + B</code>
+效果如下：</p>
+
+<p><em>这些文字会生成<code class="highlighter-rouge">&lt;em&gt;</code></em>
+<em>这些文字会生成<code class="highlighter-rouge">&lt;u&gt;</code></em></p>
+
+<p><strong>这些文字会生成<code class="highlighter-rouge">&lt;strong&gt;</code></strong>
+<strong>这些文字会生成<code class="highlighter-rouge">&lt;strong&gt;</code></strong></p>
+
+<h2 id="section-3">换行</h2>
+
+<p>四个及以上空格加回车。
+如果不想打这么多空格，只要回车就为换行，请勾选：<code class="highlighter-rouge">Preferences</code> - <code class="highlighter-rouge">Themes</code> - <code class="highlighter-rouge">Translate newlines to &lt;br&gt; tags</code></p>
+
+<h2 id="section-4">列表</h2>
+
+<h3 id="section-5">无序列表</h3>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+* 项目一 无序列表 `* + 空格键`
+* 项目二
+	* 项目二的子项目一 无序列表 `TAB + * + 空格键`
+	* 项目二的子项目二
+</code></p>
+
+<p>在 MWeb 中的快捷键为： <code class="highlighter-rouge">Option + U</code>
+效果如下：</p>
+
+<ul>
+  <li>项目一 无序列表 <code class="highlighter-rouge">* + 空格键</code></li>
+  <li>项目二
+    <ul>
+      <li>项目二的子项目一 无序列表 <code class="highlighter-rouge">TAB + * + 空格键</code></li>
+      <li>项目二的子项目二</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-6">有序列表</h3>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+1. 项目一 有序列表 `数字 + . + 空格键`
+2. 项目二 
+3. 项目三
+	1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`
+	2. 项目三的子项目二
+</code></p>
+
+<p>效果如下：</p>
+
+<ol>
+  <li>项目一 有序列表 <code class="highlighter-rouge">数字 + . + 空格键</code></li>
+  <li>项目二</li>
+  <li>项目三
+    <ol>
+      <li>项目三的子项目一 有序列表 <code class="highlighter-rouge">TAB + 数字 + . + 空格键</code></li>
+      <li>项目三的子项目二</li>
+    </ol>
+  </li>
+</ol>
+
+<h3 id="task-lists">任务列表（Task lists）</h3>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+- [ ] 任务一 未做任务 `- + 空格 + [ ]`
+- [x] 任务二 已做任务 `- + 空格 + [x]`
+</code></p>
+
+<p>效果如下：</p>
+
+<ul>
+  <li>[ ] 任务一 未做任务 <code class="highlighter-rouge">- + 空格 + [ ]</code></li>
+  <li>[x] 任务二 已做任务 <code class="highlighter-rouge">- + 空格 + [x]</code></li>
+</ul>
+
+<h2 id="section-7">图片</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)
+格式: ![Alt Text](url)
+</code></p>
+
+<p><code class="highlighter-rouge">Control + Shift + I</code> 可插入Markdown语法。
+如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code class="highlighter-rouge">CMD + V</code> 粘贴、<code class="highlighter-rouge">CMD + Option + I</code> 导入这三种方式来增加图片。
+效果如下：</p>
+
+<p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up" /></p>
+
+<h2 id="section-8">链接</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+email &lt;example@example.com&gt;
+[GitHub](http://github.com)
+自动生成连接  &lt;http://www.github.com/&gt;
+</code></p>
+
+<p><code class="highlighter-rouge">Control + Shift + L</code> 可插入Markdown语法。
+如果是 MWeb 的文档库中的文档，拖放或<code class="highlighter-rouge">CMD + Option + I</code> 导入非图片时，会生成连接。
+效果如下：</p>
+
+<p>Email 连接： <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#101;&#120;&#097;&#109;&#112;&#108;&#101;&#064;&#101;&#120;&#097;&#109;&#112;&#108;&#101;&#046;&#099;&#111;&#109;">&#101;&#120;&#097;&#109;&#112;&#108;&#101;&#064;&#101;&#120;&#097;&#109;&#112;&#108;&#101;&#046;&#099;&#111;&#109;</a>
+<a href="http://github.com">连接标题Github网站</a>
+自动生成连接像： <a href="http://www.github.com/">http://www.github.com/</a> 这样</p>
+
+<h2 id="section-9">区块引用</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+某某说:
+&gt; 第一行引用
+&gt; 第二行费用文字
+</code></p>
+
+<p><code class="highlighter-rouge">CMD + Shift + B</code> 可插入Markdown语法。
+效果如下：</p>
+
+<p>某某说:
+&gt; 第一行引用
+&gt; 第二行费用文字</p>
+
+<h2 id="section-10">行内代码</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+像这样即可：`&lt;addr&gt;` `code`
+</code></p>
+
+<p><code class="highlighter-rouge">CMD + K</code> 可插入Markdown语法。
+效果如下：</p>
+
+<p>像这样即可：<code class="highlighter-rouge">&lt;addr&gt;</code> <code class="highlighter-rouge">code</code></p>
+
+<h2 id="section-11">多行或者一段代码</h2>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>```js
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+
+}
+```
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">CMD + Shift + K</code> 可插入Markdown语法。
+效果如下：</p>
+
+<p>```js
+function fancyAlert(arg) {
+	if(arg) {
+		$.facebox({div:’#foo’})
+	}</p>
+
+<p>}
+```</p>
+
+<h2 id="section-12">顺序图或流程图</h2>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>```sequence
+张三-&gt;李四: 嘿，小四儿, 写博客了没?
+Note right of 李四: 李四愣了一下，说：
+李四--&gt;张三: 忙得吐血，哪有时间写。
+```
+
+```flow
+st=&gt;start: 开始
+e=&gt;end: 结束
+op=&gt;operation: 我的操作
+cond=&gt;condition: 确认？
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+```
+</code></pre>
+</div>
+
+<p>效果如下（ <code class="highlighter-rouge">Preferences</code> - <code class="highlighter-rouge">Themes</code> - <code class="highlighter-rouge">Enable sequence &amp; flow chart</code> 才会看到效果 ）：</p>
+
+<p><code class="highlighter-rouge">sequence
+张三-&gt;李四: 嘿，小四儿, 写博客了没?
+Note right of 李四: 李四愣了一下，说：
+李四--&gt;张三: 忙得吐血，哪有时间写。
+</code></p>
+
+<p>```flow
+st=&gt;start: 开始
+e=&gt;end: 结束
+op=&gt;operation: 我的操作
+cond=&gt;condition: 确认？</p>
+
+<p>st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op
+```</p>
+
+<p>更多请参考：<a href="http://bramp.github.io/js-sequence-diagrams/">http://bramp.github.io/js-sequence-diagrams/</a>, <a href="http://adrai.github.io/flowchart.js/">http://adrai.github.io/flowchart.js/</a></p>
+
+<h2 id="section-13">表格</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+第一格表头 | 第二格表头
+--------- | -------------
+内容单元格 第一列第一格 | 内容单元格第二列第一格
+内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格
+</code></p>
+
+<p>效果如下：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>第一格表头</th>
+      <th>第二格表头</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>内容单元格 第一列第一格</td>
+      <td>内容单元格第二列第一格</td>
+    </tr>
+    <tr>
+      <td>内容单元格 第一列第二格 多加文字</td>
+      <td>内容单元格第二列第二格</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="section-14">删除线</h2>
+
+<p>Markdown 语法：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>加删除线像这样用： ~~删除这些~~
+</code></pre>
+</div>
+
+<p>效果如下：</p>
+
+<p>加删除线像这样用： ~~删除这些~~</p>
+
+<h2 id="section-15">分隔线</h2>
+
+<p>以下三种方式都可以生成分隔线：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>***
+
+*****
+
+- - -
+</code></pre>
+</div>
+
+<p>效果如下：</p>
+
+<hr />
+
+<hr />
+
+<hr />
+
+<h2 id="mathjax">MathJax</h2>
+
+<p>Markdown 语法：</p>
+
+<p>```
+块级公式：
+<script type="math/tex">x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}</script></p>
+
+<p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
+
+<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+```</p>
+
+<p>效果如下（<code class="highlighter-rouge">Preferences</code> - <code class="highlighter-rouge">Themes</code> - <code class="highlighter-rouge">Enable MathJax</code> 才会看到效果）：</p>
+
+<p>块级公式：
+<script type="math/tex">x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}</script></p>
+
+<p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} =
+1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}
+{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
+
+<p>行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</p>
+
+<h2 id="footnote">脚注（Footnote）</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+这是一个脚注：[^sample_footnote]
+</code></p>
+
+<p>效果如下：</p>
+
+<p>这是一个脚注：<sup id="fnref:sample_footnote"><a href="#fn:sample_footnote" class="footnote">1</a></sup></p>
+
+<h2 id="section-16">注释和阅读更多</h2>
+
+<!-- comment -->
+<!-- more -->
+<p>Actions-&gt;Insert Read More Comment <em>或者</em> <code class="highlighter-rouge">Command + .</code>
+<strong>注</strong> 阅读更多的功能只用在生成网站或博客时。</p>
+
+<h2 id="toc">TOC</h2>
+
+<p>Markdown 语法：</p>
+
+<p><code class="highlighter-rouge">
+[TOC]
+</code></p>
+
+<p>效果如下：</p>
+
+<p>[TOC]</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:sample_footnote">
+      <p>这里是脚注信息 <a href="#fnref:sample_footnote" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+  </section>
+</article>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/11/TensorFlowOniOSUse1/" data-toggle="tooltip" data-placement="top" title="TensorFlow 在 iOS 平台上的使用(一)">上一篇：  <span>TensorFlow 在 iOS 平台上的使用(一)</span>
+            </a>
+        </li>
+        
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <div class="ds-thread" data-thread-key="/2016/11/Markdown-%E8%AF%AD%E6%B3%95%E5%92%8C-MWeb-%E5%86%99%E4%BD%9C%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/" data-title="Markdown 语法和 MWeb 写作使用说明" data-url="https://yiweiwoshiniya.github.io/2016/11/Markdown-%E8%AF%AD%E6%B3%95%E5%92%8C-MWeb-%E5%86%99%E4%BD%9C%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/"></div>
+
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yiweiwoshiniya"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/yiweiwoshiniya" title="@yiweiwoshiniya 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/yiweiwoshiniya" title="@yiweiwoshiniya 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:yiweiwoshiniya@hotmail.co.uk" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; Yiweiwoshiniya 2016 Theme by <a href="https://github.com/leopardpan/leopardpan.github.io/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=yiweiwoshiniya&repo=yiweiwoshiniya.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <span id="busuanzi_container_site_pv">
+            本站访问量
+              <span id="busuanzi_value_site_pv"></span>次
+          </span>
+          	</div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

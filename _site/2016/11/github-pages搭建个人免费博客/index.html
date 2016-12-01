@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>使用github pages搭建个人免费博客</title>
+  <meta name="description" content="如果你不熟悉建站各种编码语言，也不想花很多钱，却很想拥有一个独立的个人博客，那Github Pages是你绝佳的选择。github作为现在最流行的代码仓库，已经得到了很多大公司和项目的青睐。github推出的Github Pages服务不仅可以方便的为项目建立介绍站点，也可以用来建立个人博客。跟着本博的顺序，你将...">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="使用github pages搭建个人免费博客">
+  <meta name="twitter:description" content="如果你不熟悉建站各种编码语言，也不想花很多钱，却很想拥有一个独立的个人博客，那Github Pages是你绝佳的选择。github作为现在最流行的代码仓库，已经得到了很多大公司和项目的青睐。github推出的Github Pages服务不仅可以方便的为项目建立介绍站点，也可以用来建立个人博客。跟着本博的顺序，你将...">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="使用github pages搭建个人免费博客">
+  <meta property="og:description" content="如果你不熟悉建站各种编码语言，也不想花很多钱，却很想拥有一个独立的个人博客，那Github Pages是你绝佳的选择。github作为现在最流行的代码仓库，已经得到了很多大公司和项目的青睐。github推出的Github Pages服务不仅可以方便的为项目建立介绍站点，也可以用来建立个人博客。跟着本博的顺序，你将...">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://yiweiwoshiniya.github.io/2016/11/github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/">
+  <link rel="alternate" type="application/rss+xml" title="Yiweiwoshiniya" href="https://yiweiwoshiniya.github.io/feed.xml">
+
+  <meta name="google-site-verification" content="joX8-0Ekan5MQZrA4Ylvc6ttdDwEHejWUw1Wl4mQCEY" />
+
+  <meta name="baidu-site-verification" content="lO3Zz89LtC" />
+
+  <!-- 站点统计 -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c5df621e52fed76679837920c9b8133d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-88106816-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 Yiweiwoshiniya 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                以为我是你呀
+                            
+                        </h2>
+                        <p>
+                           
+                                iOS / 读书笔记
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Yiweiwoshiniya" class="blog-button">Yiweiwoshiniya</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">博客</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎访问我的个人博客</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">使用github pages搭建个人免费博客</h1>
+    <div class="post-meta">
+      <time datetime="2016-11-29 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-11-29</time>
+     
+      <!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+      <span id="busuanzi_container_page_pv">　　阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+    <p>如果你不熟悉建站各种编码语言，也不想花很多钱，却很想拥有一个独立的个人博客，那Github Pages是你绝佳的选择。github作为现在最流行的代码仓库，已经得到了很多大公司和项目的青睐。github推出的Github Pages服务不仅可以方便的为项目建立介绍站点，也可以用来建立个人博客。跟着本博的顺序，你将顺利搭建自己的博客。</p>
+
+<h3 id="github-pages">Github Pages</h3>
+
+<h4 id="section"><strong>创建仓库</strong></h4>
+
+<blockquote>
+  <p>登录你自己的<code class="highlighter-rouge">github</code>账号，接下来去这个页面去创建一个新仓库<a href="https://github.com/new">https://github.com/new</a>
+这个新仓库就是存放你博客的地方
+注意一点，你的仓库名字格式应为：<code class="highlighter-rouge">用户名.github.io</code></p>
+</blockquote>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image1.png" alt="" /></p>
+
+<blockquote>
+  <p>建完仓库，进入你刚创建的仓库，找到设置，进入设置页面</p>
+</blockquote>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image2.png" alt="" /></p>
+
+<blockquote>
+  <p>在设置页面，一般都默认就好，在<code class="highlighter-rouge">github pages</code>那栏点击<code class="highlighter-rouge">launch automatic page generator</code></p>
+</blockquote>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image3.png" alt="" /></p>
+
+<h4 id="section-1"><strong>编辑用户界面</strong></h4>
+
+<blockquote>
+  <p>到这一步，就是编辑的博客页面展示信息</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">Page name</code> 页面的标题</p>
+
+<p><code class="highlighter-rouge">tagline</code> 页面副标题(描述)</p>
+
+<p><code class="highlighter-rouge">body</code> 正文</p>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image4.png" alt="" /></p>
+
+<blockquote>
+  <p>一般都默认就可以了，反正当前只是创建一个demo页面，后续还得自己改
+，直接点击下面的绿色按钮 <code class="highlighter-rouge">continue to layouts</code></p>
+</blockquote>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image5.png" alt="" /></p>
+
+<h4 id="section-2"><strong>公布页面</strong></h4>
+
+<blockquote>
+  <p>随便选择一个主题模板（不用纠结，这里的主题很少，一般都是<code class="highlighter-rouge">jekyll</code>或者<code class="highlighter-rouge">hexo</code>的主题）,然后点击 <code class="highlighter-rouge">Publish page</code>，你的页面就出来了。可以直接在浏览器中输入你的博客地址:<code class="highlighter-rouge">用户名.github.io</code>就可以看到效果了。</p>
+</blockquote>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image6.png" alt="" /></p>
+
+<h4 id="section-3"><strong>克隆仓库</strong></h4>
+
+<blockquote>
+  <p>使用<code class="highlighter-rouge">git</code>工具或者命令行来<code class="highlighter-rouge">git</code>到本地，然后做自己的修改就可以了，换主题请往后看。</p>
+</blockquote>
+
+<h3 id="jekyll">Jekyll</h3>
+<p>jekyll是一个基于ruby开发的，专用于构建静态网站的程序。它能够将一些动态的组件：模板、liquid代码等构建成静态的页面集合，Github-Page全面引入jekyll作为其构建引擎，这也是学习jekyll的主要动力。同时，除了jekyll引擎本身，它还提供一整套功能，比如web server。我们用jekyll –server启动本地调试就是此项功能。读者可能已经发现，在启动server后，之前我们的项目目录下会多出一个_site目录。jekyll默认将转化的静态页面保存在_site目录下，并以某种方式组织。使用jekyll构建博客是十分适合的，因为其内建的对象就是专门为blog而生的，在后面的逐步介绍中读者会体会到这一点。但是需要强调的是，jekyll并不是博客软件，跟workpress之类的完全两码事，它仅仅是个一次性的模板解析引擎，它不能像动态服务端脚本那样处理请求。</p>
+
+<p>更多关于<code class="highlighter-rouge">jekyll</code>请看</p>
+
+<p><code class="highlighter-rouge">github</code>: <a href="https://github.com/jekyll/jekyll">https://github.com/jekyll/jekyll</a></p>
+
+<p>静态博客地址：<a href="https://jekyllrb.com/">https://jekyllrb.com/</a></p>
+
+<p>中文静态博客地址：<a href="http://jekyllcn.com/">http://jekyllcn.com/</a></p>
+
+<h4 id="section-4"><strong>选择主题</strong></h4>
+
+<blockquote>
+  <p>刚才只是搭建好你的仓库，现在你该考虑你的博客风格了，到这个网站选择你喜欢的模板<a href="http://jekyllthemes.org/">http://jekyllthemes.org/</a></p>
+</blockquote>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image7.png" alt="" /></p>
+
+<blockquote>
+  <p>找到喜欢的主题下载到本地解压，将本地仓库除了<code class="highlighter-rouge">.git</code>隐藏文件夹的都删除，，将下载下来的主题的文件全部复制出来到git仓库</p>
+</blockquote>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image8.png" alt="" /></p>
+
+<h4 id="jekyll-1"><strong>jekyll是如何工作的</strong></h4>
+
+<p>在jekyll解析你的网站之前，需要确保网站有以下目录结构：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>|-- _config.yml
+|-- _includes
+|-- _layouts
+|   |-- default.html
+|   |-- post.html
+|-- _posts
+|   |-- 20011-10-25-open-source-is-good.html
+|   |-- 20011-04-26-hello-world.html
+|-- _site
+|-- index.html
+|-- images
+   |-- css
+       |-- style.css
+   |-- javascripts
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li><code class="highlighter-rouge">_config.yml</code>：保存配置，该配置将影响jekyll构造网站的各种行为。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code class="highlighter-rouge">_includes</code>：该目录下的文件可以用来作为公共的内容被其他文章引用，就跟C语言include头文件的机制完全一样，jekyll在解析时会对<code class="highlighter-rouge"><span class="p">{</span><span class="w"> </span><span class="err">%</span><span class="w"> </span><span class="err">include</span><span class="w"> </span><span class="err">file.ext</span><span class="w"> </span><span class="err">%</span><span class="p">}</span></code>标记扩展成对应的在_includes文件夹中的文件。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code class="highlighter-rouge">_layouts</code>：该目录下的文件作为主要的模板文件。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code class="highlighter-rouge">_posts</code>：文章或网页应当放在这个目录中，但需要注意的是，文章的文件名必须是<code class="highlighter-rouge">YYYY-MM-DD-title</code>。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code class="highlighter-rouge">_site</code>：上面提到过，这是jekyll默认的转化结果存放的目录。</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li><code class="highlighter-rouge">images</code>：这个目录没有强制的要求，主要目的是存放你的资源文件，图片、样式表、脚本等。</li>
+  </ul>
+</blockquote>
+
+<p>以上就是大概的简介，可以在<code class="highlighter-rouge">_config.yml</code>文件中修改网站以及自己的个人信息，<code class="highlighter-rouge">_posts</code>文件夹放你的博文，切记文件名格式，更多详细的语法上面贴出来的<code class="highlighter-rouge">jekyll</code>的官方博客以及<code class="highlighter-rouge">github</code>可以参考。</p>
+
+<p>现在可以将改动提交到远端仓库，提交后请求：<code class="highlighter-rouge">用户名.github.io</code>看看是不是变了。</p>
+
+<h3 id="jekyll-2">Jekyll安装本地服务</h3>
+<p>如果每次改动都需要提交到远端仓库才能看到效果的话，那就太麻烦了，有时候我们需要在本地测试好了，才提交上去，这就需要我们安装Jekyll本地服务。</p>
+
+<p><strong>注意</strong>：</p>
+
+<ol>
+  <li>ruby版本，macOS自带了ruby,但是不建议用。</li>
+  <li>由于国内网络，gem官方的源可能不好用，切换成国内的。</li>
+</ol>
+
+<h4 id="ruby"><strong>Ruby安装</strong></h4>
+<ul>
+  <li>jekyll本身基于Ruby开发，想要本地搭建测试环境需要有Ruby环境。
+虽然macOS有自带ruby，但是不推荐。我们使用rvm来管理ruby。
+rvm官网：<a href="https://rvm.io/">https://rvm.io/</a> 安装有介绍。</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>\curl -sSL https://get.rvm.io | bash -s stable --ruby
+</code></pre>
+</div>
+
+<ul>
+  <li>安装完成查看版本</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rvm -v
+</code></pre>
+</div>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image9.png" alt="" /></p>
+
+<ul>
+  <li><code class="highlighter-rouge">rvm list known</code> 查看可用的ruby版本</li>
+</ul>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image10.png" alt="" /></p>
+
+<ul>
+  <li>找到最新的版本（不一定是非要安装最新的）</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rvm install 版本号(如2.2.0)
+</code></pre>
+</div>
+
+<ul>
+  <li>因为系统自带ruby，我们需要切换成我们自己的ruby版本</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>rvm use 2.2.0 --default
+</code></pre>
+</div>
+
+<ul>
+  <li>查看 <code class="highlighter-rouge">rvm list</code> 就可以看到当前默认的是我们自己的ruby版本。<code class="highlighter-rouge">ruby -v</code> 也可以看到使我们自己的的ruby版本。</li>
+</ul>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image11.png" alt="" /></p>
+
+<h4 id="jekyll-3"><strong>安装jekyll</strong></h4>
+
+<ul>
+  <li>首先，我们需要切换rubygem仓库镜像地址</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo gem sources --remove http://rubygems.org/
+sudo gem sources -a https://gems.ruby-china.org/
+</code></pre>
+</div>
+
+<ul>
+  <li>更新gem自身版本</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem update --system
+</code></pre>
+</div>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image12.png" alt="" /></p>
+
+<ul>
+  <li>执行下面的命令安装jekyll</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install jekyll
+</code></pre>
+</div>
+
+<p>如果有报错提示权限问题的话，在Mac OS X El Capitan或者更高版本下</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install -n /usr/local/bin jekyll
+</code></pre>
+</div>
+
+<ul>
+  <li>待安装成功后，终端文件夹路径切到本地仓库下，执行</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>jekyll server
+</code></pre>
+</div>
+
+<p>如果报错，看下报错信息（原谅我当时没有保存报错信息），如果有提到bundler的话。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install bundler
+</code></pre>
+</div>
+
+<p>待成功后继续执行</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>jekyll server
+</code></pre>
+</div>
+
+<p>如果还是报错，如果有提到 bundle install 的话,执行：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle install
+</code></pre>
+</div>
+
+<p>继续执行</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>jekyll server
+</code></pre>
+</div>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image13.png" alt="" /></p>
+
+<p>控制台提示: Server address: http://127.0.0.1:4000/，将这个地址粘贴到浏览器中请求看看，你的博客出来了。</p>
+
+<p>这样就可以本地测试，如果修改了，启动jekyll服务进行本地测试，测试没有问题再提交到远端github仓库。</p>
+
+<h3 id="section-5">域名绑定</h3>
+<p>购买域名，国内，国外的域名服务商都可以。我自己在阿里云买的域名。
+假如你现在购买成功了如：<code class="highlighter-rouge">abc.com</code>
+你需要在阿里云后台去配置这个域名的解析</p>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image14.png" alt="" /></p>
+
+<p><code class="highlighter-rouge">ping 用户名.github.io</code> 在终端执行，会看到一个IP，记住这个IP</p>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image15.png" alt="" /></p>
+
+<p><img src="/images/posts/使用github pages搭建个人免费博客/image16.png" alt="" /></p>
+
+<p>在git本地仓库下，新建一个CNAME文件，里面写上你购买的域名，保存提交。过一会，就可以在你的github的仓库设置中看到你的域名已经配置上去了。
+这下可以在浏览器中访问<code class="highlighter-rouge">abc.com</code>就可以看到你的博客了。</p>
+
+<h3 id="section-6">总结</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>至此就搭建完成，可以愉快的写作了！搭建的过程挺不顺利的，安装本地测试服务的时候遇到各种版本、路径、权限问题，不过都解决了。大家如果有什么问题，欢迎留言。
+
+感谢帮过我的各个博主。
+http://www.ezlippi.com/
+http://baixin.io/
+http://cyzus.github.io/
+</code></pre>
+</div>
+
+
+  </section>
+</article>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/01/Protobuf%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%BC%96%E7%A0%81%E5%9D%91/" data-toggle="tooltip" data-placement="top" title="Protobuf在项目中的编码坑">上一篇：  <span>Protobuf在项目中的编码坑</span>
+            </a>
+        </li>
+        
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <div class="ds-thread" data-thread-key="/2016/11/github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/" data-title="使用github pages搭建个人免费博客" data-url="https://yiweiwoshiniya.github.io/2016/11/github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/"></div>
+
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yiweiwoshiniya"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/yiweiwoshiniya" title="@yiweiwoshiniya 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/yiweiwoshiniya" title="@yiweiwoshiniya 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:yiweiwoshiniya@hotmail.co.uk" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; Yiweiwoshiniya 2016 Theme by <a href="https://github.com/leopardpan/leopardpan.github.io/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=yiweiwoshiniya&repo=yiweiwoshiniya.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <span id="busuanzi_container_site_pv">
+            本站访问量
+              <span id="busuanzi_value_site_pv"></span>次
+          </span>
+          	</div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

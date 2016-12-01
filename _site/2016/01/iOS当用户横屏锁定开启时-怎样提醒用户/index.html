@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>iOS当用户横屏锁定开启时，怎样提醒用户</title>
+  <meta name="description" content="iOS 横屏锁">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iOS当用户横屏锁定开启时，怎样提醒用户">
+  <meta name="twitter:description" content="iOS 横屏锁">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iOS当用户横屏锁定开启时，怎样提醒用户">
+  <meta property="og:description" content="iOS 横屏锁">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://yiweiwoshiniya.github.io/2016/01/iOS%E5%BD%93%E7%94%A8%E6%88%B7%E6%A8%AA%E5%B1%8F%E9%94%81%E5%AE%9A%E5%BC%80%E5%90%AF%E6%97%B6-%E6%80%8E%E6%A0%B7%E6%8F%90%E9%86%92%E7%94%A8%E6%88%B7/">
+  <link rel="alternate" type="application/rss+xml" title="Yiweiwoshiniya" href="https://yiweiwoshiniya.github.io/feed.xml">
+
+  <meta name="google-site-verification" content="joX8-0Ekan5MQZrA4Ylvc6ttdDwEHejWUw1Wl4mQCEY" />
+
+  <meta name="baidu-site-verification" content="lO3Zz89LtC" />
+
+  <!-- 站点统计 -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c5df621e52fed76679837920c9b8133d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-88106816-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 Yiweiwoshiniya 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                以为我是你呀
+                            
+                        </h2>
+                        <p>
+                           
+                                iOS / 读书笔记
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Yiweiwoshiniya" class="blog-button">Yiweiwoshiniya</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">博客</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎访问我的个人博客</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">iOS当用户横屏锁定开启时，怎样提醒用户</h1>
+    <div class="post-meta">
+      <time datetime="2016-01-14 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-01-14</time>
+     
+      <!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+      <span id="busuanzi_container_page_pv">　　阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+    <p>iOS 横屏锁</p>
+
+<hr />
+
+<p>事发：朋友公司是做教育的，APP中讲课画板是需要在横屏过程中全屏显示，自己已经实现横竖屏切换，但是老板有这样一个需求，假如用户开启了横屏锁，需要提醒用户将横屏锁打开。于是找到了我，问我有没有<strong>系统提供的一个API</strong>供我们调用，如果有，就直接调用解决了。</p>
+
+<p>我在查了好多文档和Google后发现官方并没有提供这样的接口，这里我贴出来一个链接可以看看，说的不错，<a href="http://stackoverflow.com/questions/5410763/detect-ios-device-orientation-lock">Detect iOS device orientation lock</a>.</p>
+
+<p>于是我换了种思路来解决这个问题。思路是这样的，利用重力感应器来判断用户当前的屏幕方向，利用系统横竖屏通知获取当前横竖屏状态；如果在重力感应获取到用户是横屏状态下，但是系统没有通知过来，那就提醒用户开启横屏锁，否则就正常操作。</p>
+
+<h3 id="section">代码实现：</h3>
+
+<ul>
+  <li><strong>引入头文件、初始化等</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="cp">#import &lt;CoreMotion/CoreMotion.h&gt;
+</span><span class="k">@interface</span> <span class="nc">ViewController</span> <span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">BOOL</span> <span class="n">canRotate</span><span class="p">;</span><span class="c1">//标志位：判断现在能不能旋转屏幕
+</span><span class="p">}</span>
+
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">CMMotionManager</span> <span class="o">*</span> <span class="n">motionManager</span><span class="p">;</span>
+<span class="k">@end</span>
+
+<span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">viewDidLoad</span> <span class="p">{</span>
+    <span class="p">[</span><span class="n">super</span> <span class="nf">viewDidLoad</span><span class="p">];</span>
+    
+    <span class="n">canRotate</span> <span class="o">=</span> <span class="nb">NO</span><span class="p">;</span><span class="c1">//这个参数是整个问题解决的核心，注意它的变化
+</span>    
+    <span class="p">[</span><span class="n">self</span> <span class="nf">startMotionManager</span><span class="p">];</span>
+
+    <span class="p">[[</span><span class="n">UIDevice</span> <span class="nf">currentDevice</span><span class="p">]</span> <span class="nf">beginGeneratingDeviceOrientationNotifications</span><span class="p">];</span>
+    <span class="p">[[</span><span class="n">NSNotificationCenter</span> <span class="nf">defaultCenter</span><span class="p">]</span> <span class="nf">addObserver</span><span class="p">:</span><span class="n">self</span>
+                                             <span class="nf">selector</span><span class="p">:</span><span class="k">@selector</span><span class="p">(</span><span class="nf">handleDeviceOrientationDidChange</span><span class="p">:)</span>
+                                                 <span class="nf">name</span><span class="p">:</span><span class="n">UIDeviceOrientationDidChangeNotification</span>
+                                               <span class="nf">object</span><span class="p">:</span><span class="nb">nil</span>
+     <span class="p">];</span>
+    
+
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>系统通知部分过来的操作</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//这个是系统横竖屏通知过来，自己需要操作的方法
+- (void)handleDeviceOrientationDidChange:(UIInterfaceOrientation)interfaceOrientation
+{
+    //1.获取 当前设备 实例
+    UIDevice *device = [UIDevice currentDevice] ;
+    /**
+     *  2.取得当前Device的方向，Device的方向类型为Integer
+     *
+     *  必须调用beginGeneratingDeviceOrientationNotifications方法后，此orientation属性才有效，否则一直是0。orientation用于判断设备的朝向，与应用UI方向无关
+     *
+     *  @param device.orientation
+     *
+     */
+    
+    switch (device.orientation) {
+        //其他情况屏幕方向就不一一列举出来了
+        case UIDeviceOrientationLandscapeLeft:
+            NSLog(@"屏幕向左横置");
+            canRotate = YES;//只有当用户把手机旋转到横屏的时候来去触发判断是否支持横屏，如果不支持就提醒用户
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            NSLog(@"屏幕向右橫置");
+            canRotate = YES;
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>CMMotionManager部分代码（如果不知道干啥的，自行百度）</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//初始化
+- (void)startMotionManager{
+    if (_motionManager == nil) {
+        _motionManager = [[CMMotionManager alloc] init];
+    }
+    _motionManager.deviceMotionUpdateInterval = 1/15.0;//多长时间刷新一次
+    if (_motionManager.deviceMotionAvailable) {
+        NSLog(@"Device Motion Available");
+        [_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+                                            withHandler: ^(CMDeviceMotion *motion, NSError *error){
+                                                [self performSelectorOnMainThread:@selector(handleDeviceMotion:) withObject:motion waitUntilDone:YES];
+                                                
+                                            }];
+    } else {
+        NSLog(@"No device motion on device.");
+        [self setMotionManager:nil];
+    }
+}
+
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>//这里是重力感应的处理方法
+- (void)handleDeviceMotion:(CMDeviceMotion *)deviceMotion{
+    double x = deviceMotion.gravity.x;
+    double y = deviceMotion.gravity.y;
+    if (fabs(y) &gt;= fabs(x))
+    {
+        if (y &gt;= 0){
+            // UIDeviceOrientationPortraitUpsideDown;
+        }
+        else{
+            // UIDeviceOrientationPortrait;
+        }
+    }
+    else
+    {
+        if(canRotate == NO)
+        {
+            UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"提醒" message:@"您关闭了横屏锁,请在控制中心打开" preferredStyle:UIAlertControllerStyleAlert];
+            [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }]];
+            [self presentViewController:ac animated:YES completion:nil];
+        }
+        if (x &gt;= 0){
+            // UIDeviceOrientationLandscapeRight;
+        }
+        else{
+            // UIDeviceOrientationLandscapeLeft;
+        }
+    }
+}
+
+</code></pre>
+</div>
+
+<ul>
+  <li><strong>用完别忘记关掉</strong></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-(void)viewWillDisappear:(BOOL)animated
+{
+    [_motionManager stopDeviceMotionUpdates];
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+</code></pre>
+</div>
+
+<h3 id="section-1">结束</h3>
+<blockquote>
+  <p>如果有异议或者更好的方式欢迎留言！</p>
+</blockquote>
+
+
+  </section>
+</article>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2015/12/iOS%E5%A6%82%E4%BD%95%E8%B7%B3%E5%88%B0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE%E9%87%8C%E7%9A%84%E5%90%84%E7%A7%8D%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2/" data-toggle="tooltip" data-placement="top" title="iOS如何跳到系统设置里的各种设置界面">上一篇：  <span>iOS如何跳到系统设置里的各种设置界面</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2016/01/%E8%AE%A4%E8%AF%86-SDWebImage%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" data-toggle="tooltip" data-placement="top" title="认识：SDWebImage第三方库">下一篇：  <span>认识：SDWebImage第三方库</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <div class="ds-thread" data-thread-key="/2016/01/iOS%E5%BD%93%E7%94%A8%E6%88%B7%E6%A8%AA%E5%B1%8F%E9%94%81%E5%AE%9A%E5%BC%80%E5%90%AF%E6%97%B6-%E6%80%8E%E6%A0%B7%E6%8F%90%E9%86%92%E7%94%A8%E6%88%B7/" data-title="iOS当用户横屏锁定开启时，怎样提醒用户" data-url="https://yiweiwoshiniya.github.io/2016/01/iOS%E5%BD%93%E7%94%A8%E6%88%B7%E6%A8%AA%E5%B1%8F%E9%94%81%E5%AE%9A%E5%BC%80%E5%90%AF%E6%97%B6-%E6%80%8E%E6%A0%B7%E6%8F%90%E9%86%92%E7%94%A8%E6%88%B7/"></div>
+
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yiweiwoshiniya"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/yiweiwoshiniya" title="@yiweiwoshiniya 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/yiweiwoshiniya" title="@yiweiwoshiniya 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:yiweiwoshiniya@hotmail.co.uk" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; Yiweiwoshiniya 2016 Theme by <a href="https://github.com/leopardpan/leopardpan.github.io/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=yiweiwoshiniya&repo=yiweiwoshiniya.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <span id="busuanzi_container_site_pv">
+            本站访问量
+              <span id="busuanzi_value_site_pv"></span>次
+          </span>
+          	</div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

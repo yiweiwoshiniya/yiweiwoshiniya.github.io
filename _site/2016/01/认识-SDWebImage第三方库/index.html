@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>认识：SDWebImage第三方库</title>
+  <meta name="description" content="iOS 第三方库">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="认识：SDWebImage第三方库">
+  <meta name="twitter:description" content="iOS 第三方库">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="认识：SDWebImage第三方库">
+  <meta property="og:description" content="iOS 第三方库">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://yiweiwoshiniya.github.io/2016/01/%E8%AE%A4%E8%AF%86-SDWebImage%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/">
+  <link rel="alternate" type="application/rss+xml" title="Yiweiwoshiniya" href="https://yiweiwoshiniya.github.io/feed.xml">
+
+  <meta name="google-site-verification" content="joX8-0Ekan5MQZrA4Ylvc6ttdDwEHejWUw1Wl4mQCEY" />
+
+  <meta name="baidu-site-verification" content="lO3Zz89LtC" />
+
+  <!-- 站点统计 -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c5df621e52fed76679837920c9b8133d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-88106816-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 Yiweiwoshiniya 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                以为我是你呀
+                            
+                        </h2>
+                        <p>
+                           
+                                iOS / 读书笔记
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Yiweiwoshiniya" class="blog-button">Yiweiwoshiniya</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">博客</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎访问我的个人博客</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">认识：SDWebImage第三方库</h1>
+    <div class="post-meta">
+      <time datetime="2016-01-17 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-01-17</time>
+     
+      <!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+      <span id="busuanzi_container_page_pv">　　阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+    <p>iOS 第三方库</p>
+
+<h2 id="section"><strong>新浪博客迁移过来的文章</strong></h2>
+
+<p>这个类库提供一个UIImageView类别以支持加载来自网络的远程图片。具有缓存管理、异步下载、同一个URL下载次数控制和优化等特征。ios9.0出来以后，不知道SDWebImage支持了NSUrlSession了没有，应该是没有，我在git上下载的最新的仍然用的是NSURLConnection。目前AFNetworking已经支持。<a href="https://github.com/rs/SDWebImage">github链接</a></p>
+
+<h3 id="section-1">先看代码:</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#import "UIImageView+WebCache.h"
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:imageView1];
+    
+    NSURL *url = [NSURL URLWithString:@"http://s1.dwstatic.com/group1/M00/18/23/1244a21b95f70cb20db2489fe69fb3bb.gif"];
+    UIImage *placeholder = [UIImage imageNamed:@"1.png"];
+    [imageView1 sd_setImageWithURL:url placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        NSLog(@"加载完成");
+ 
+
+    }];
+</code></pre>
+</div>
+
+<ul>
+  <li>还可以实时查看进度</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>[imageView1 sd_setImageWithURL:url placeholderImage:placeholder options:options progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        NSLog(@"进度：%f",1.0*receivedSize/expectedSize);
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+         NSLog(@"加载完成");
+ 
+    }];
+
+</code></pre>
+</div>
+
+<ul>
+  <li>上面的options有很多，比如</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>SDWebImageOptions options = SDWebImageRetryFailed |SDWebImageProgressiveDownload;
+</code></pre>
+</div>
+
+<ul>
+  <li>第一个支持下载失败重新下载，第二个支持边下边显示（如果图片过大的话，这样会提高用户体验）。<br />
+有时候我们会遇到好多控制类都加载图片，使用这个库，他会帮你做缓存处理，但这样图片多的话就会报内存警告，我们只需要在appDelegate中处理便是，他也为我们提供了方法</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    //取消正在下载的
+    [[SDWebImageManager sharedManager] cancelAll];
+    //清除缓存(内存中的)
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
+ 
+}
+</code></pre>
+</div>
+
+<h3 id="sdwebimage">下面附一些SDWebImage的原理，就是执行流程</h3>
+
+<ol>
+  <li>入口 setImageWithURL:placeholderImage:options: 会先把 placeholderImage显示，然后 SDWebImageManager 根据 URL 开始处理图片。</li>
+  <li>进入 SDWebImageManager-downloadWithURL:delegate:options:userInfo:，交给 SDImageCache 从缓存查找图片是否已经下载 queryDiskCacheForKey:delegate:userInfo:.</li>
+  <li>先从内存图片缓存查找是否有图片，如果内存中已经有图片缓存，SDImageCacheDelegate回调 imageCache:didFindImage:forKey:userInfo: 到 SDWebImageManager。</li>
+  <li>SDWebImageManagerDelegate 回调 webImageManager:didFinishWithImage: 到 UIImageView+WebCache等前端展示图片。</li>
+  <li>如果内存缓存中没有，生成 NSInvocationOperation添加到队列开始从硬盘查找图片是否已经缓存。</li>
+  <li>根据 URLKey在硬盘缓存目录下尝试读取图片文件。这一步是在 NSOperation 进行的操作，所以回主线程进行结果回调 notifyDelegate:。</li>
+  <li>如果上一操作从硬盘读取到了图片，将图片添加到内存缓存中（如果空闲内存过小，会先清空内存缓存）。SDImageCacheDelegate回调 imageCache:didFindImage:forKey:userInfo:。进而回调展示图片。</li>
+  <li>如果从硬盘缓存目录读取不到图片，说明所有缓存都不存在该图片，需要下载图片，回调 imageCache:didNotFindImageForKey:userInfo:。</li>
+  <li>共享或重新生成一个下载器 SDWebImageDownloader 开始下载图片。</li>
+  <li>图片下载由 NSURLConnection来做，实现相关 delegate 来判断图片下载中、下载完成和下载失败。</li>
+  <li>connection:didReceiveData: 中利用 ImageIO做了按图片下载进度加载效果。</li>
+  <li>connectionDidFinishLoading: 数据下载完成后交给 SDWebImageDecoder 做图片解码处理。</li>
+  <li>图片解码处理在一个 NSOperationQueue完成，不会拖慢主线程 UI。如果有需要对下载的图片进行二次处理，最好也在这里完成，效率会好很多。</li>
+  <li>在主线程 notifyDelegateOnMainThreadWithInfo: 宣告解码完成，imageDecoder:didFinishDecodingImage:userInfo: 回调给 SDWebImageDownloader。</li>
+  <li>imageDownloader:didFinishWithImage: 回调给 SDWebImageManager告知图片下载完成。</li>
+  <li>通知所有的 downloadDelegates下载完成，回调给需要的地方展示图片。</li>
+  <li>将图片保存到 SDImageCache中，内存缓存和硬盘缓存同时保存。写文件到硬盘也在以单独 NSInvocationOperation 完成，避免拖慢主线程。</li>
+  <li>SDImageCache 在初始化的时候会注册一些消息通知，在内存警告或退到后台的时候清理内存图片缓存，应用结束的时候清理过期图片。</li>
+  <li>SDWI 也提供了 UIButton+WebCache 和 MKAnnotationView+WebCache，方便使用。</li>
+  <li>SDWebImagePrefetcher 可以预先下载图片，方便后续使用。</li>
+</ol>
+
+<blockquote>
+  <p>如果还想了解一些知识，这里的链接可以看看<a href="http://wenku.baidu.com/link?url=QFIAhWZsTKO_c1bRt7CyIMh9uFmAtCtD5Se2NhwBkZQ6_Q8ECWib1WANi604SXHH2XT1Jd66cJVXnlJwpU8_Am5i3_TxyReYUbzrgZs1v_a">百度文库这篇关于SDWebImage的文章</a></p>
+</blockquote>
+
+
+  </section>
+</article>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/01/iOS%E5%BD%93%E7%94%A8%E6%88%B7%E6%A8%AA%E5%B1%8F%E9%94%81%E5%AE%9A%E5%BC%80%E5%90%AF%E6%97%B6-%E6%80%8E%E6%A0%B7%E6%8F%90%E9%86%92%E7%94%A8%E6%88%B7/" data-toggle="tooltip" data-placement="top" title="iOS当用户横屏锁定开启时，怎样提醒用户">上一篇：  <span>iOS当用户横屏锁定开启时，怎样提醒用户</span>
+            </a>
+        </li>
+        
+        
+        <li class="next">
+            <a href="/2016/01/Protobuf%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%BC%96%E7%A0%81%E5%9D%91/" data-toggle="tooltip" data-placement="top" title="Protobuf在项目中的编码坑">下一篇：  <span>Protobuf在项目中的编码坑</span>
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <div class="ds-thread" data-thread-key="/2016/01/%E8%AE%A4%E8%AF%86-SDWebImage%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" data-title="认识：SDWebImage第三方库" data-url="https://yiweiwoshiniya.github.io/2016/01/%E8%AE%A4%E8%AF%86-SDWebImage%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/"></div>
+
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yiweiwoshiniya"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/yiweiwoshiniya" title="@yiweiwoshiniya 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/yiweiwoshiniya" title="@yiweiwoshiniya 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:yiweiwoshiniya@hotmail.co.uk" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; Yiweiwoshiniya 2016 Theme by <a href="https://github.com/leopardpan/leopardpan.github.io/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=yiweiwoshiniya&repo=yiweiwoshiniya.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <span id="busuanzi_container_site_pv">
+            本站访问量
+              <span id="busuanzi_value_site_pv"></span>次
+          </span>
+          	</div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>

@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yiweiwoshiniya</title>
+    <description>欢迎访问我的个人博客</description>
+    <link>https://yiweiwoshiniya.github.io/</link>
+    <atom:link href="https://yiweiwoshiniya.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 01 Dec 2016 17:20:05 +0800</pubDate>
+    <lastBuildDate>Thu, 01 Dec 2016 17:20:05 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>使用github pages搭建个人免费博客</title>
+        <description>&lt;p&gt;如果你不熟悉建站各种编码语言，也不想花很多钱，却很想拥有一个独立的个人博客，那Github Pages是你绝佳的选择。github作为现在最流行的代码仓库，已经得到了很多大公司和项目的青睐。github推出的Github Pages服务不仅可以方便的为项目建立介绍站点，也可以用来建立个人博客。跟着本博的顺序，你将顺利搭建自己的博客。&lt;/p&gt;
+
+&lt;h3 id=&quot;github-pages&quot;&gt;Github Pages&lt;/h3&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;&lt;strong&gt;创建仓库&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;登录你自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;github&lt;/code&gt;账号，接下来去这个页面去创建一个新仓库&lt;a href=&quot;https://github.com/new&quot;&gt;https://github.com/new&lt;/a&gt;
+这个新仓库就是存放你博客的地方
+注意一点，你的仓库名字格式应为：&lt;code class=&quot;highlighter-rouge&quot;&gt;用户名.github.io&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;建完仓库，进入你刚创建的仓库，找到设置，进入设置页面&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在设置页面，一般都默认就好，在&lt;code class=&quot;highlighter-rouge&quot;&gt;github pages&lt;/code&gt;那栏点击&lt;code class=&quot;highlighter-rouge&quot;&gt;launch automatic page generator&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;&lt;strong&gt;编辑用户界面&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;到这一步，就是编辑的博客页面展示信息&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Page name&lt;/code&gt; 页面的标题&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;tagline&lt;/code&gt; 页面副标题(描述)&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt; 正文&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;一般都默认就可以了，反正当前只是创建一个demo页面，后续还得自己改
+，直接点击下面的绿色按钮 &lt;code class=&quot;highlighter-rouge&quot;&gt;continue to layouts&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;&lt;strong&gt;公布页面&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;随便选择一个主题模板（不用纠结，这里的主题很少，一般都是&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;hexo&lt;/code&gt;的主题）,然后点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Publish page&lt;/code&gt;，你的页面就出来了。可以直接在浏览器中输入你的博客地址:&lt;code class=&quot;highlighter-rouge&quot;&gt;用户名.github.io&lt;/code&gt;就可以看到效果了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-3&quot;&gt;&lt;strong&gt;克隆仓库&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;工具或者命令行来&lt;code class=&quot;highlighter-rouge&quot;&gt;git&lt;/code&gt;到本地，然后做自己的修改就可以了，换主题请往后看。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;jekyll&quot;&gt;Jekyll&lt;/h3&gt;
+&lt;p&gt;jekyll是一个基于ruby开发的，专用于构建静态网站的程序。它能够将一些动态的组件：模板、liquid代码等构建成静态的页面集合，Github-Page全面引入jekyll作为其构建引擎，这也是学习jekyll的主要动力。同时，除了jekyll引擎本身，它还提供一整套功能，比如web server。我们用jekyll –server启动本地调试就是此项功能。读者可能已经发现，在启动server后，之前我们的项目目录下会多出一个_site目录。jekyll默认将转化的静态页面保存在_site目录下，并以某种方式组织。使用jekyll构建博客是十分适合的，因为其内建的对象就是专门为blog而生的，在后面的逐步介绍中读者会体会到这一点。但是需要强调的是，jekyll并不是博客软件，跟workpress之类的完全两码事，它仅仅是个一次性的模板解析引擎，它不能像动态服务端脚本那样处理请求。&lt;/p&gt;
+
+&lt;p&gt;更多关于&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;请看&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;github&lt;/code&gt;: &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;https://github.com/jekyll/jekyll&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;静态博客地址：&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;https://jekyllrb.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;中文静态博客地址：&lt;a href=&quot;http://jekyllcn.com/&quot;&gt;http://jekyllcn.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-4&quot;&gt;&lt;strong&gt;选择主题&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;刚才只是搭建好你的仓库，现在你该考虑你的博客风格了，到这个网站选择你喜欢的模板&lt;a href=&quot;http://jekyllthemes.org/&quot;&gt;http://jekyllthemes.org/&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;找到喜欢的主题下载到本地解压，将本地仓库除了&lt;code class=&quot;highlighter-rouge&quot;&gt;.git&lt;/code&gt;隐藏文件夹的都删除，，将下载下来的主题的文件全部复制出来到git仓库&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;jekyll-1&quot;&gt;&lt;strong&gt;jekyll是如何工作的&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;在jekyll解析你的网站之前，需要确保网站有以下目录结构：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;|-- _config.yml
+|-- _includes
+|-- _layouts
+|   |-- default.html
+|   |-- post.html
+|-- _posts
+|   |-- 20011-10-25-open-source-is-good.html
+|   |-- 20011-04-26-hello-world.html
+|-- _site
+|-- index.html
+|-- images
+   |-- css
+       |-- style.css
+   |-- javascripts
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;：保存配置，该配置将影响jekyll构造网站的各种行为。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes&lt;/code&gt;：该目录下的文件可以用来作为公共的内容被其他文章引用，就跟C语言include头文件的机制完全一样，jekyll在解析时会对&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;file.ext&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;标记扩展成对应的在_includes文件夹中的文件。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_layouts&lt;/code&gt;：该目录下的文件作为主要的模板文件。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;：文章或网页应当放在这个目录中，但需要注意的是，文章的文件名必须是&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-title&lt;/code&gt;。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;：上面提到过，这是jekyll默认的转化结果存放的目录。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;images&lt;/code&gt;：这个目录没有强制的要求，主要目的是存放你的资源文件，图片、样式表、脚本等。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;以上就是大概的简介，可以在&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;文件中修改网站以及自己的个人信息，&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;文件夹放你的博文，切记文件名格式，更多详细的语法上面贴出来的&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;的官方博客以及&lt;code class=&quot;highlighter-rouge&quot;&gt;github&lt;/code&gt;可以参考。&lt;/p&gt;
+
+&lt;p&gt;现在可以将改动提交到远端仓库，提交后请求：&lt;code class=&quot;highlighter-rouge&quot;&gt;用户名.github.io&lt;/code&gt;看看是不是变了。&lt;/p&gt;
+
+&lt;h3 id=&quot;jekyll-2&quot;&gt;Jekyll安装本地服务&lt;/h3&gt;
+&lt;p&gt;如果每次改动都需要提交到远端仓库才能看到效果的话，那就太麻烦了，有时候我们需要在本地测试好了，才提交上去，这就需要我们安装Jekyll本地服务。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ruby版本，macOS自带了ruby,但是不建议用。&lt;/li&gt;
+  &lt;li&gt;由于国内网络，gem官方的源可能不好用，切换成国内的。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;ruby&quot;&gt;&lt;strong&gt;Ruby安装&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;jekyll本身基于Ruby开发，想要本地搭建测试环境需要有Ruby环境。
+虽然macOS有自带ruby，但是不推荐。我们使用rvm来管理ruby。
+rvm官网：&lt;a href=&quot;https://rvm.io/&quot;&gt;https://rvm.io/&lt;/a&gt; 安装有介绍。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\curl -sSL https://get.rvm.io | bash -s stable --ruby
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装完成查看版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;rvm list known&lt;/code&gt; 查看可用的ruby版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;找到最新的版本（不一定是非要安装最新的）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm install 版本号(如2.2.0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;因为系统自带ruby，我们需要切换成我们自己的ruby版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;rvm use 2.2.0 --default
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;查看 &lt;code class=&quot;highlighter-rouge&quot;&gt;rvm list&lt;/code&gt; 就可以看到当前默认的是我们自己的ruby版本。&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby -v&lt;/code&gt; 也可以看到使我们自己的的ruby版本。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;jekyll-3&quot;&gt;&lt;strong&gt;安装jekyll&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首先，我们需要切换rubygem仓库镜像地址&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo gem sources --remove http://rubygems.org/
+sudo gem sources -a https://gems.ruby-china.org/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;更新gem自身版本&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem update --system
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image12.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;执行下面的命令安装jekyll&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install jekyll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果有报错提示权限问题的话，在Mac OS X El Capitan或者更高版本下&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install -n /usr/local/bin jekyll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;待安装成功后，终端文件夹路径切到本地仓库下，执行&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果报错，看下报错信息（原谅我当时没有保存报错信息），如果有提到bundler的话。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install bundler
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;待成功后继续执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果还是报错，如果有提到 bundle install 的话,执行：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;继续执行&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;jekyll server
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;控制台提示: Server address: http://127.0.0.1:4000/，将这个地址粘贴到浏览器中请求看看，你的博客出来了。&lt;/p&gt;
+
+&lt;p&gt;这样就可以本地测试，如果修改了，启动jekyll服务进行本地测试，测试没有问题再提交到远端github仓库。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;域名绑定&lt;/h3&gt;
+&lt;p&gt;购买域名，国内，国外的域名服务商都可以。我自己在阿里云买的域名。
+假如你现在购买成功了如：&lt;code class=&quot;highlighter-rouge&quot;&gt;abc.com&lt;/code&gt;
+你需要在阿里云后台去配置这个域名的解析&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ping 用户名.github.io&lt;/code&gt; 在终端执行，会看到一个IP，记住这个IP&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image15.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/使用github pages搭建个人免费博客/image16.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在git本地仓库下，新建一个CNAME文件，里面写上你购买的域名，保存提交。过一会，就可以在你的github的仓库设置中看到你的域名已经配置上去了。
+这下可以在浏览器中访问&lt;code class=&quot;highlighter-rouge&quot;&gt;abc.com&lt;/code&gt;就可以看到你的博客了。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;总结&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;至此就搭建完成，可以愉快的写作了！搭建的过程挺不顺利的，安装本地测试服务的时候遇到各种版本、路径、权限问题，不过都解决了。大家如果有什么问题，欢迎留言。
+
+感谢帮过我的各个博主。
+http://www.ezlippi.com/
+http://baixin.io/
+http://cyzus.github.io/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 29 Nov 2016 00:00:00 +0800</pubDate>
+        <link>https://yiweiwoshiniya.github.io/2016/11/github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/</link>
+        <guid isPermaLink="true">https://yiweiwoshiniya.github.io/2016/11/github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Protobuf在项目中的编码坑</title>
+        <description>&lt;p&gt;标签（空格分隔）： iOS，protobuf&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;公司现在用的protobuf这个格式来交互，于是前段时间恶补了一下protobuf方面的知识，现在在和API调接口的时候就出来问题，我从后台请求过来的二进制流转字符串一直是&lt;code class=&quot;highlighter-rouge&quot;&gt;nil&lt;/code&gt;,但是同样的接口我用json请求就没有问题，使用了Protobuf就转不过来。
+&amp;gt; * 第一步，先百度查找方案，什么原因，找到说是编码问题，然后就和后台交涉，他们告诉我protobuf打包是UTF-8,于是我取字符串的时候UTF-8解码，还是nil。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;第二步，Google上面看看protobuf的编码格式是什么，官网也没有提这件事，原因就是protobuf就是不需要我们转成字符串，直接操作二进制流。不过，自己在objc提供的编码类型中都试了一下，发现&lt;code class=&quot;highlighter-rouge&quot;&gt;NSISOLatin1StringEncoding&lt;/code&gt;这个编码格式好像可以的，这个大概对应web端的编码格式是ISO-88590-1,于是大呼开心，终于解决了。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;但是，事情并没有这么简单，在测试有的接口时还是会转成nil，这下我怒了，什么鬼啊，继续查找问题所在，这次在&lt;code class=&quot;highlighter-rouge&quot;&gt;NSData&lt;/code&gt;转&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;返回&lt;code class=&quot;highlighter-rouge&quot;&gt;nil&lt;/code&gt;的问题上为突破口，发现是&lt;code class=&quot;highlighter-rouge&quot;&gt;NSData&lt;/code&gt;内包含非&lt;code class=&quot;highlighter-rouge&quot;&gt;encoding&lt;/code&gt;的编码字符，这次终于解决了，只需要把非&lt;code class=&quot;highlighter-rouge&quot;&gt;encoding&lt;/code&gt;的字符替换掉就可以了。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;结束&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;其实protobuf并不需要我们转成字符串，但是我就是这么耿直，发现问题就是要知道为什么，不然会很难受，有没有同感！！！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;附录&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;objc中支持的编码格式其实很多，但是没有枚举出来，像UTF-8对应的是4,Chinese (GBK) === -2147482063，如果需要其他编码格式，可自行查找。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 21 Jan 2016 00:00:00 +0800</pubDate>
+        <link>https://yiweiwoshiniya.github.io/2016/01/Protobuf%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%BC%96%E7%A0%81%E5%9D%91/</link>
+        <guid isPermaLink="true">https://yiweiwoshiniya.github.io/2016/01/Protobuf%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E7%BC%96%E7%A0%81%E5%9D%91/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>认识：SDWebImage第三方库</title>
+        <description>&lt;p&gt;iOS 第三方库&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;&lt;strong&gt;新浪博客迁移过来的文章&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;这个类库提供一个UIImageView类别以支持加载来自网络的远程图片。具有缓存管理、异步下载、同一个URL下载次数控制和优化等特征。ios9.0出来以后，不知道SDWebImage支持了NSUrlSession了没有，应该是没有，我在git上下载的最新的仍然用的是NSURLConnection。目前AFNetworking已经支持。&lt;a href=&quot;https://github.com/rs/SDWebImage&quot;&gt;github链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;先看代码:&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#import &quot;UIImageView+WebCache.h&quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:imageView1];
+    
+    NSURL *url = [NSURL URLWithString:@&quot;http://s1.dwstatic.com/group1/M00/18/23/1244a21b95f70cb20db2489fe69fb3bb.gif&quot;];
+    UIImage *placeholder = [UIImage imageNamed:@&quot;1.png&quot;];
+    [imageView1 sd_setImageWithURL:url placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        NSLog(@&quot;加载完成&quot;);
+ 
+
+    }];
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;还可以实时查看进度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[imageView1 sd_setImageWithURL:url placeholderImage:placeholder options:options progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        NSLog(@&quot;进度：%f&quot;,1.0*receivedSize/expectedSize);
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+         NSLog(@&quot;加载完成&quot;);
+ 
+    }];
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;上面的options有很多，比如&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SDWebImageOptions options = SDWebImageRetryFailed |SDWebImageProgressiveDownload;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一个支持下载失败重新下载，第二个支持边下边显示（如果图片过大的话，这样会提高用户体验）。&lt;br /&gt;
+有时候我们会遇到好多控制类都加载图片，使用这个库，他会帮你做缓存处理，但这样图片多的话就会报内存警告，我们只需要在appDelegate中处理便是，他也为我们提供了方法&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-(void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    //取消正在下载的
+    [[SDWebImageManager sharedManager] cancelAll];
+    //清除缓存(内存中的)
+    [[SDWebImageManager sharedManager].imageCache clearMemory];
+ 
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;sdwebimage&quot;&gt;下面附一些SDWebImage的原理，就是执行流程&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;入口 setImageWithURL:placeholderImage:options: 会先把 placeholderImage显示，然后 SDWebImageManager 根据 URL 开始处理图片。&lt;/li&gt;
+  &lt;li&gt;进入 SDWebImageManager-downloadWithURL:delegate:options:userInfo:，交给 SDImageCache 从缓存查找图片是否已经下载 queryDiskCacheForKey:delegate:userInfo:.&lt;/li&gt;
+  &lt;li&gt;先从内存图片缓存查找是否有图片，如果内存中已经有图片缓存，SDImageCacheDelegate回调 imageCache:didFindImage:forKey:userInfo: 到 SDWebImageManager。&lt;/li&gt;
+  &lt;li&gt;SDWebImageManagerDelegate 回调 webImageManager:didFinishWithImage: 到 UIImageView+WebCache等前端展示图片。&lt;/li&gt;
+  &lt;li&gt;如果内存缓存中没有，生成 NSInvocationOperation添加到队列开始从硬盘查找图片是否已经缓存。&lt;/li&gt;
+  &lt;li&gt;根据 URLKey在硬盘缓存目录下尝试读取图片文件。这一步是在 NSOperation 进行的操作，所以回主线程进行结果回调 notifyDelegate:。&lt;/li&gt;
+  &lt;li&gt;如果上一操作从硬盘读取到了图片，将图片添加到内存缓存中（如果空闲内存过小，会先清空内存缓存）。SDImageCacheDelegate回调 imageCache:didFindImage:forKey:userInfo:。进而回调展示图片。&lt;/li&gt;
+  &lt;li&gt;如果从硬盘缓存目录读取不到图片，说明所有缓存都不存在该图片，需要下载图片，回调 imageCache:didNotFindImageForKey:userInfo:。&lt;/li&gt;
+  &lt;li&gt;共享或重新生成一个下载器 SDWebImageDownloader 开始下载图片。&lt;/li&gt;
+  &lt;li&gt;图片下载由 NSURLConnection来做，实现相关 delegate 来判断图片下载中、下载完成和下载失败。&lt;/li&gt;
+  &lt;li&gt;connection:didReceiveData: 中利用 ImageIO做了按图片下载进度加载效果。&lt;/li&gt;
+  &lt;li&gt;connectionDidFinishLoading: 数据下载完成后交给 SDWebImageDecoder 做图片解码处理。&lt;/li&gt;
+  &lt;li&gt;图片解码处理在一个 NSOperationQueue完成，不会拖慢主线程 UI。如果有需要对下载的图片进行二次处理，最好也在这里完成，效率会好很多。&lt;/li&gt;
+  &lt;li&gt;在主线程 notifyDelegateOnMainThreadWithInfo: 宣告解码完成，imageDecoder:didFinishDecodingImage:userInfo: 回调给 SDWebImageDownloader。&lt;/li&gt;
+  &lt;li&gt;imageDownloader:didFinishWithImage: 回调给 SDWebImageManager告知图片下载完成。&lt;/li&gt;
+  &lt;li&gt;通知所有的 downloadDelegates下载完成，回调给需要的地方展示图片。&lt;/li&gt;
+  &lt;li&gt;将图片保存到 SDImageCache中，内存缓存和硬盘缓存同时保存。写文件到硬盘也在以单独 NSInvocationOperation 完成，避免拖慢主线程。&lt;/li&gt;
+  &lt;li&gt;SDImageCache 在初始化的时候会注册一些消息通知，在内存警告或退到后台的时候清理内存图片缓存，应用结束的时候清理过期图片。&lt;/li&gt;
+  &lt;li&gt;SDWI 也提供了 UIButton+WebCache 和 MKAnnotationView+WebCache，方便使用。&lt;/li&gt;
+  &lt;li&gt;SDWebImagePrefetcher 可以预先下载图片，方便后续使用。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果还想了解一些知识，这里的链接可以看看&lt;a href=&quot;http://wenku.baidu.com/link?url=QFIAhWZsTKO_c1bRt7CyIMh9uFmAtCtD5Se2NhwBkZQ6_Q8ECWib1WANi604SXHH2XT1Jd66cJVXnlJwpU8_Am5i3_TxyReYUbzrgZs1v_a&quot;&gt;百度文库这篇关于SDWebImage的文章&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sun, 17 Jan 2016 00:00:00 +0800</pubDate>
+        <link>https://yiweiwoshiniya.github.io/2016/01/%E8%AE%A4%E8%AF%86-SDWebImage%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</link>
+        <guid isPermaLink="true">https://yiweiwoshiniya.github.io/2016/01/%E8%AE%A4%E8%AF%86-SDWebImage%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>iOS当用户横屏锁定开启时，怎样提醒用户</title>
+        <description>&lt;p&gt;iOS 横屏锁&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;事发：朋友公司是做教育的，APP中讲课画板是需要在横屏过程中全屏显示，自己已经实现横竖屏切换，但是老板有这样一个需求，假如用户开启了横屏锁，需要提醒用户将横屏锁打开。于是找到了我，问我有没有&lt;strong&gt;系统提供的一个API&lt;/strong&gt;供我们调用，如果有，就直接调用解决了。&lt;/p&gt;
+
+&lt;p&gt;我在查了好多文档和Google后发现官方并没有提供这样的接口，这里我贴出来一个链接可以看看，说的不错，&lt;a href=&quot;http://stackoverflow.com/questions/5410763/detect-ios-device-orientation-lock&quot;&gt;Detect iOS device orientation lock&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;于是我换了种思路来解决这个问题。思路是这样的，利用重力感应器来判断用户当前的屏幕方向，利用系统横竖屏通知获取当前横竖屏状态；如果在重力感应获取到用户是横屏状态下，但是系统没有通知过来，那就提醒用户开启横屏锁，否则就正常操作。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;代码实现：&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;引入头文件、初始化等&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;CoreMotion/CoreMotion.h&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@interface&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ViewController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;BOOL&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;canRotate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//标志位：判断现在能不能旋转屏幕
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CMMotionManager&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;motionManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@end&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;viewDidLoad&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;viewDidLoad&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;n&quot;&gt;canRotate&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//这个参数是整个问题解决的核心，注意它的变化
+&lt;/span&gt;    
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;startMotionManager&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIDevice&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;currentDevice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;beginGeneratingDeviceOrientationNotifications&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSNotificationCenter&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;defaultCenter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;addObserver&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;
+                                             &lt;span class=&quot;nf&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;@selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;handleDeviceOrientationDidChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:)&lt;/span&gt;
+                                                 &lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UIDeviceOrientationDidChangeNotification&lt;/span&gt;
+                                               &lt;span class=&quot;nf&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;nil&lt;/span&gt;
+     &lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;系统通知部分过来的操作&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//这个是系统横竖屏通知过来，自己需要操作的方法
+- (void)handleDeviceOrientationDidChange:(UIInterfaceOrientation)interfaceOrientation
+{
+    //1.获取 当前设备 实例
+    UIDevice *device = [UIDevice currentDevice] ;
+    /**
+     *  2.取得当前Device的方向，Device的方向类型为Integer
+     *
+     *  必须调用beginGeneratingDeviceOrientationNotifications方法后，此orientation属性才有效，否则一直是0。orientation用于判断设备的朝向，与应用UI方向无关
+     *
+     *  @param device.orientation
+     *
+     */
+    
+    switch (device.orientation) {
+        //其他情况屏幕方向就不一一列举出来了
+        case UIDeviceOrientationLandscapeLeft:
+            NSLog(@&quot;屏幕向左横置&quot;);
+            canRotate = YES;//只有当用户把手机旋转到横屏的时候来去触发判断是否支持横屏，如果不支持就提醒用户
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            NSLog(@&quot;屏幕向右橫置&quot;);
+            canRotate = YES;
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;CMMotionManager部分代码（如果不知道干啥的，自行百度）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//初始化
+- (void)startMotionManager{
+    if (_motionManager == nil) {
+        _motionManager = [[CMMotionManager alloc] init];
+    }
+    _motionManager.deviceMotionUpdateInterval = 1/15.0;//多长时间刷新一次
+    if (_motionManager.deviceMotionAvailable) {
+        NSLog(@&quot;Device Motion Available&quot;);
+        [_motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue]
+                                            withHandler: ^(CMDeviceMotion *motion, NSError *error){
+                                                [self performSelectorOnMainThread:@selector(handleDeviceMotion:) withObject:motion waitUntilDone:YES];
+                                                
+                                            }];
+    } else {
+        NSLog(@&quot;No device motion on device.&quot;);
+        [self setMotionManager:nil];
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;//这里是重力感应的处理方法
+- (void)handleDeviceMotion:(CMDeviceMotion *)deviceMotion{
+    double x = deviceMotion.gravity.x;
+    double y = deviceMotion.gravity.y;
+    if (fabs(y) &amp;gt;= fabs(x))
+    {
+        if (y &amp;gt;= 0){
+            // UIDeviceOrientationPortraitUpsideDown;
+        }
+        else{
+            // UIDeviceOrientationPortrait;
+        }
+    }
+    else
+    {
+        if(canRotate == NO)
+        {
+            UIAlertController *ac = [UIAlertController alertControllerWithTitle:@&quot;提醒&quot; message:@&quot;您关闭了横屏锁,请在控制中心打开&quot; preferredStyle:UIAlertControllerStyleAlert];
+            [ac addAction:[UIAlertAction actionWithTitle:@&quot;确定&quot; style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                
+            }]];
+            [self presentViewController:ac animated:YES completion:nil];
+        }
+        if (x &amp;gt;= 0){
+            // UIDeviceOrientationLandscapeRight;
+        }
+        else{
+            // UIDeviceOrientationLandscapeLeft;
+        }
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;用完别忘记关掉&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-(void)viewWillDisappear:(BOOL)animated
+{
+    [_motionManager stopDeviceMotionUpdates];
+    [[UIDevice currentDevice] endGeneratingDeviceOrientationNotifications];
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;结束&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;如果有异议或者更好的方式欢迎留言！&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Thu, 14 Jan 2016 00:00:00 +0800</pubDate>
+        <link>https://yiweiwoshiniya.github.io/2016/01/iOS%E5%BD%93%E7%94%A8%E6%88%B7%E6%A8%AA%E5%B1%8F%E9%94%81%E5%AE%9A%E5%BC%80%E5%90%AF%E6%97%B6-%E6%80%8E%E6%A0%B7%E6%8F%90%E9%86%92%E7%94%A8%E6%88%B7/</link>
+        <guid isPermaLink="true">https://yiweiwoshiniya.github.io/2016/01/iOS%E5%BD%93%E7%94%A8%E6%88%B7%E6%A8%AA%E5%B1%8F%E9%94%81%E5%AE%9A%E5%BC%80%E5%90%AF%E6%97%B6-%E6%80%8E%E6%A0%B7%E6%8F%90%E9%86%92%E7%94%A8%E6%88%B7/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>iOS如何跳到系统设置里的各种设置界面</title>
+        <description>&lt;p&gt;标签： iOS、授权、设置&lt;/p&gt;
+
+&lt;p&gt;最近项目需要授权时候跳转到相关的设置页面，自己总结了一下，想写到简书上来，和大家分享一下。&lt;/p&gt;
+
+&lt;p&gt;在本人测试后，iOS8和9都没有问题，直接跳转到各个页面，这可能苹果对这方面开放了吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;第一步&lt;/strong&gt;
+修改plist文件，在里面添加 URL types 并设置一项URL Schemes为prefs和Document Role如图：
+&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1342810-c74fe69d3bb0140c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot; /&gt;
+不知道是我的原因还是怎么回事，第一次我没有设置Document Role 这一项，始终都没有跳转过去，加上就好使了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;第二步&lt;/strong&gt;
+想跳转到哪个页面就写代码可以了&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-Object-C&quot;&gt;        sourceString = @&quot;请在iPhone的“设置-隐私-相册”选项中，允许XXXX访问你的相册&quot;;
+        openString = @&quot;prefs:root=Privacy&amp;amp;path=PHOTOS&quot;;
+        ALAuthorizationStatus authStatus = [ALAssetsLibrary authorizationStatus];
+        if(authStatus == ALAuthorizationStatusRestricted || authStatus ==ALAuthorizationStatusDenied)
+        {
+            isRoot = false;
+        }
+
+
+        NSURL *url = [NSURL URLWithString:openString];
+        if ([[UIApplication sharedApplication] canOpenURL:url])
+            {
+                [[UIApplication sharedApplication] openURL:url];
+            }
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：第一步是基础，不然怎么写都不好使，还有就是单词不要拼错了。想跳转其他的如WiFi就写WIFI等类似英文名。&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Dec 2015 00:00:00 +0800</pubDate>
+        <link>https://yiweiwoshiniya.github.io/2015/12/iOS%E5%A6%82%E4%BD%95%E8%B7%B3%E5%88%B0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE%E9%87%8C%E7%9A%84%E5%90%84%E7%A7%8D%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2/</link>
+        <guid isPermaLink="true">https://yiweiwoshiniya.github.io/2015/12/iOS%E5%A6%82%E4%BD%95%E8%B7%B3%E5%88%B0%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE%E9%87%8C%E7%9A%84%E5%90%84%E7%A7%8D%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
