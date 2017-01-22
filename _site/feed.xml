@@ -5,9 +5,212 @@
     <description>欢迎访问我的个人博客</description>
     <link>https://yiweiwoshiniya.xyz/</link>
     <atom:link href="https://yiweiwoshiniya.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Dec 2016 14:36:11 +0800</pubDate>
-    <lastBuildDate>Mon, 12 Dec 2016 14:36:11 +0800</lastBuildDate>
+    <pubDate>Sun, 22 Jan 2017 18:39:58 +0800</pubDate>
+    <lastBuildDate>Sun, 22 Jan 2017 18:39:58 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>iOS Auto Code Review（本地）整理</title>
+        <description>&lt;p&gt;Code Review在项目开发中是非常必要的。但是大部分团队，要么因为人员的流动性或者自身技术的问题，造成Code Review的难度太大，太耗时间。而现在我们可以把一些基础的跟业务没有关系的Review交给计算机，我们只关心业务代码是否有缺陷，这将大大减轻我们的压力，提高团队合作代码的质量。&lt;/p&gt;
+
+&lt;h2 id=&quot;objective-c&quot;&gt;Objective-C&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/iOS Auto Code Review/image1.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;oclint&quot;&gt;1. OCLint简单介绍&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://oclint.org/&quot;&gt;OCLint&lt;/a&gt;是一个静态代码分析工具，目的是用于提升代码的质量和减少代码可能存在的缺陷。主要是用于 C、C++ 和 Objective-c 语言，同时解决一些潜在的问题。
+OCLint会精确的指出哪一行代码违反了哪一等级的规则。在我们本地编译的时候，他会做这么几件事：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;生成 xcodebuild.log 文件（当然如果使用的是oclint-xcodebuild的话）&lt;/li&gt;
+  &lt;li&gt;生成 compile_commands.json 文件&lt;/li&gt;
+  &lt;li&gt;OCLint读取自定义的或者自带的Rules,逐个扫描compile_commands.json中的每一个文件&lt;/li&gt;
+  &lt;li&gt;OCLint将生成的报告展示在Xcode上&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;oclint-1&quot;&gt;2. OCLint使用（安装到代码脚本配置）&lt;/h3&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;1. 安装&lt;/h4&gt;
+&lt;p&gt;我们选择HomeBrew安装，如图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/iOS Auto Code Review/image2.png&quot; alt=&quot;OCLint安装&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;生成compile_commands.json文件有三种方式，oclint-xcodebuild、xcpretty、xctool，oclint-xcodebuild由于OCLint团队不再维护，xctool团队也说对高版本的Xcode不再支持，所以我们使用OCLint团队推荐的xcpretty，而且xcpretty编译更快。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;gem install xcpretty
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;2. 使用&lt;/h4&gt;
+&lt;p&gt;官方有详细的介绍&lt;a href=&quot;http://docs.oclint.org/en/stable/guide/xcode.html&quot;&gt;Using OCLint in Xcode&lt;/a&gt;这里就贴出我使用的shell脚本吧。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export LC_ALL=&quot;en_US.UTF-8&quot;
+if [ -f ~/.bash_profile ]; then
+source ~/.bash_profile
+fi
+hash oclint &amp;amp;&amp;gt; /dev/null
+if [ $? -eq 1 ]; then
+echo &amp;gt;&amp;amp;2 &quot;oclint not found, analyzing stopped&quot;
+exit 1
+fi
+cd ${SRCROOT}
+xcodebuild -target target名 -configuration Debug -scheme scheme名 -dry-run | xcpretty -r json-compilation-database --output compile_commands.json
+oclint-json-compilation-database -- -report-type xcode
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;3. 规则的使用，以及自定义自己公司的规则&lt;/h3&gt;
+&lt;p&gt;OCLint提供的规则&lt;a href=&quot;http://docs.oclint.org/en/stable/rules/index.html&quot;&gt;Rule Index&lt;/a&gt;，截止目前一共71条。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;忽略一写文件或者文件夹&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-e pods
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;禁用一些规则&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-disable-rule=InvertedLogic 
+-disable-rule=CollapsibleIfStatements \
+-disable-rule=UnusedMethodParameter \
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;更改一些规则的阈值&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;-rc=LONG_LINE=200
+-rc=NCSS_METHOD=100
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;对于自定义规则目前还没有研究，这个需要学习CMake以及Clang AST等等相关知识，只能待以后研究。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;swift&quot;&gt;Swift&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/iOS Auto Code Review/image3.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;swiftlint&quot;&gt;1. SwiftLint简单介绍&lt;/h3&gt;
+
+&lt;p&gt;SwiftLint 是一个用于强制检查 Swift 代码风格和规定的一个工具，基本上以 GitHub’s Swift 代码风格指南为基础。&lt;/p&gt;
+
+&lt;p&gt;SwiftLint Hook 了 Clang 和 SourceKit 从而能够使用 AST 来表示源代码文件的更多精确结果。&lt;/p&gt;
+
+&lt;h3 id=&quot;swiftlint-1&quot;&gt;2. SwiftLint使用（安装到代码脚本配置）&lt;/h3&gt;
+&lt;p&gt;使用 Homebrew 安装&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew install swiftlint
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;整合 SwiftLint 到 Xcode 体系中去从而可以使警告和错误显示到 IDE 上，只需要在 Xcode 中添加一个新的”Run Script Phase”并且包含如下代码即可：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if which swiftlint &amp;gt;/dev/null; then
+  swiftlint
+else
+  echo &quot;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;3. 规则的使用，以及自定义公司的规则&lt;/h3&gt;
+
+&lt;p&gt;在控制台输入&lt;code class=&quot;highlighter-rouge&quot;&gt;swiftlint rules&lt;/code&gt;可以看到当前所以的规则：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/iOS Auto Code Review/image4.jpg&quot; alt=&quot;SwiftLint当前的所以规则&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;最好的方式是SwiftLint和&lt;a href=&quot;https://github.com/kevindelord/swift-style-guide&quot;&gt;Swift Style Guide&lt;/a&gt;配合，执行下面这条命令（在项目根目录下）&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl https://raw.githubusercontent.com/kevindelord/swift-style-guide/master/.swiftlint.yml &amp;gt; .swiftlint.yml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这个文件里面你可以包含以下规则（只是部分）:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_rules&lt;/code&gt;：关闭某些默认开启的规则&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;opt_in_rules&lt;/code&gt;：一些规则是可选的&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;whitelist_rules&lt;/code&gt;：不可以和&lt;code class=&quot;highlighter-rouge&quot;&gt;disabled_rules&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;opt_in_rules&lt;/code&gt;并列。类似一个白名单，只有在这个列表中的规则才是开启的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;disabled_rules: # 执行时排除掉的规则
+  - colon
+  - comma
+  - control_statement
+opt_in_rules: # 一些规则仅仅是可选的
+  - empty_count
+  - missing_docs
+  # 可以通过执行如下指令来查找所有可用的规则:
+  # swiftlint rules
+included: # 执行 linting 时包含的路径。如果出现这个 `--path` 会被忽略。
+  - Source
+excluded: # 执行 linting 时忽略的路径。 优先级比 `included` 更高。
+  - Carthage
+  - Pods
+  - Source/ExcludedFolder
+  - Source/ExcludedFile.swift
+# 可配置的规则可以通过这个配置文件来自定义
+# 二进制规则可以设置他们的严格程度
+force_cast: warning # 隐式
+force_try:
+  severity: warning # 显式
+# 同时有警告和错误等级的规则，可以只设置它的警告等级
+# 隐式
+line_length: 110
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可以用相应的语法自定义规则：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  pirates_beat_ninjas: #规则标示符
+    name: &quot;Pirates Beat Ninjas&quot; #规则名称， 可选
+    regex: &quot;([n,N]inja)&quot; # 匹配的模式
+    match_kinds: # 需要匹配的语法类型， 可选
+      - comment
+      - identifier
+    message: &quot;Pirates are better than ninjas.&quot; # 提示信息，可选
+    severity: error # 提示级别， 可选
+  no_hiding_in_strings:
+    regex: &quot;([n,N]inja)&quot;
+    match_kinds: string
+  no_chinese_word:
+    regex: &quot;([\u4e00-\u9fa5])&quot;
+    message: &quot;不能有中文&quot;
+    match_kinds: string
+    severity: error
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;objective-cswift&quot;&gt;Objective-C和Swift混合项目&lt;/h2&gt;
+
+&lt;p&gt;目前我是创建两个shell脚本来分别执行，如图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/iOS Auto Code Review/image5.png&quot; alt=&quot;效果图&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;参考引用&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://oclint.org/&quot;&gt;http://oclint.org/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/realm/SwiftLint&quot;&gt;https://github.com/realm/SwiftLint&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://kevindelord.io/2016/04/06/integrate-swiftlint/&quot;&gt;http://kevindelord.io/2016/04/06/integrate-swiftlint/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://shengpan.net/auto-code-review/&quot;&gt;https://shengpan.net/auto-code-review/&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 Dec 2016 00:00:00 +0800</pubDate>
+        <link>https://yiweiwoshiniya.xyz/2016/12/iOS-Auto-Code-Review/</link>
+        <guid isPermaLink="true">https://yiweiwoshiniya.xyz/2016/12/iOS-Auto-Code-Review/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
     
       <item>
         <title>使用github pages搭建个人免费博客</title>

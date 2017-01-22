@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <title>iOS Auto Code Review（本地）整理</title>
+  <meta name="description" content="Code Review在项目开发中是非常必要的。但是大部分团队，要么因为人员的流动性或者自身技术的问题，造成Code Review的难度太大，太耗时间。而现在我们可以把一些基础的跟业务没有关系的Review交给计算机，我们只关心业务代码是否有缺陷，这将大大减轻我们的压力，提高团队合作代码的质量。">
+  <meta name="author" content="leopardpan">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="iOS Auto Code Review（本地）整理">
+  <meta name="twitter:description" content="Code Review在项目开发中是非常必要的。但是大部分团队，要么因为人员的流动性或者自身技术的问题，造成Code Review的难度太大，太耗时间。而现在我们可以把一些基础的跟业务没有关系的Review交给计算机，我们只关心业务代码是否有缺陷，这将大大减轻我们的压力，提高团队合作代码的质量。">
+  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="iOS Auto Code Review（本地）整理">
+  <meta property="og:description" content="Code Review在项目开发中是非常必要的。但是大部分团队，要么因为人员的流动性或者自身技术的问题，造成Code Review的难度太大，太耗时间。而现在我们可以把一些基础的跟业务没有关系的Review交给计算机，我们只关心业务代码是否有缺陷，这将大大减轻我们的压力，提高团队合作代码的质量。">
+  
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="canonical" href="https://yiweiwoshiniya.xyz/2016/12/iOS-Auto-Code-Review/">
+  <link rel="alternate" type="application/rss+xml" title="Yiweiwoshiniya" href="https://yiweiwoshiniya.xyz/feed.xml">
+
+  <meta name="google-site-verification" content="joX8-0Ekan5MQZrA4Ylvc6ttdDwEHejWUw1Wl4mQCEY" />
+
+  <meta name="baidu-site-verification" content="lO3Zz89LtC" />
+
+  <!-- 站点统计 -->
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 百度统计 -->
+  
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c5df621e52fed76679837920c9b8133d";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+  
+
+<!-- google 统计 -->
+  
+  <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-88106816-1', 'auto');
+      ga('send', 'pageview');
+  </script>
+  
+
+</head>
+
+
+  <body>
+
+    <span class="mobile btn-mobile-menu">        
+      <div class="nav_container">
+         <nav class="nav-menu-item" style = "float:right">
+            <i class="nav-menu-item">
+              <a href="/#blog" title="" class="blog-button">  博客主页
+              </a>
+            </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/archive" title="archive" class="btn-mobile-menu__icon">
+                      所有文章
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/tags" title="tags" class="btn-mobile-menu__icon">
+                      标签
+                  </a>
+                </i>
+            
+                <i class="nav-menu-item">
+
+                  <a href="/about" title="about" class="btn-mobile-menu__icon">
+                      关于我
+                  </a>
+                </i>
+            
+          </nav>
+      </div>
+    </span>
+    
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('/images/background-cover.jpg')">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <!-- 头像效果-start -->
+        <div class="ih-item circle effect right_to_left">            
+            <a href="/#blog" title="前往 Yiweiwoshiniya 的主页" class="blog-button">
+                <div class="img"><img src="/images/avatar.jpg" alt="img"></div>
+                <div class="info">
+                    <div class="info-back">
+                        <h2> 
+                            
+                                以为我是你呀
+                            
+                        </h2>
+                        <p>
+                           
+                                iOS / 读书笔记
+                            
+                        </p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- 头像效果-end -->
+        <h1 class="panel-cover__title panel-title"><a href="/#blog" title="link to homepage for Yiweiwoshiniya" class="blog-button">Yiweiwoshiniya</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">博客</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">欢迎访问我的个人博客</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+        
+        
+
+        <div class="navigation-wrapper">
+          <div>
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">博客主页</a></li>
+                
+                  <li class="navigation__item"><a href="/archive" title="archive">所有文章</a></li>
+                
+                  <li class="navigation__item"><a href="/tags" title="tags">标签</a></li>
+                
+                  <li class="navigation__item"><a href="/about" title="about">关于我</a></li>
+                
+              </ul>
+            </nav>
+          </div>          
+        </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="panel-cover--overlay cover-clear"></div>
+    
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <h1 class="post-title">iOS Auto Code Review（本地）整理</h1>
+    <div class="post-meta">
+      <time datetime="2016-12-22 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2016-12-22</time>
+     
+      <!--<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>-->
+      <span id="busuanzi_container_page_pv">　　阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
+    </div>
+  </header>
+
+  <section class="post">
+    <p>Code Review在项目开发中是非常必要的。但是大部分团队，要么因为人员的流动性或者自身技术的问题，造成Code Review的难度太大，太耗时间。而现在我们可以把一些基础的跟业务没有关系的Review交给计算机，我们只关心业务代码是否有缺陷，这将大大减轻我们的压力，提高团队合作代码的质量。</p>
+
+<h2 id="objective-c">Objective-C</h2>
+
+<p><img src="/images/posts/iOS Auto Code Review/image1.png" alt="效果图" /></p>
+
+<h3 id="oclint">1. OCLint简单介绍</h3>
+
+<p><a href="http://oclint.org/">OCLint</a>是一个静态代码分析工具，目的是用于提升代码的质量和减少代码可能存在的缺陷。主要是用于 C、C++ 和 Objective-c 语言，同时解决一些潜在的问题。
+OCLint会精确的指出哪一行代码违反了哪一等级的规则。在我们本地编译的时候，他会做这么几件事：</p>
+
+<ol>
+  <li>生成 xcodebuild.log 文件（当然如果使用的是oclint-xcodebuild的话）</li>
+  <li>生成 compile_commands.json 文件</li>
+  <li>OCLint读取自定义的或者自带的Rules,逐个扫描compile_commands.json中的每一个文件</li>
+  <li>OCLint将生成的报告展示在Xcode上</li>
+</ol>
+
+<h3 id="oclint-1">2. OCLint使用（安装到代码脚本配置）</h3>
+
+<h4 id="section">1. 安装</h4>
+<p>我们选择HomeBrew安装，如图</p>
+
+<p><img src="/images/posts/iOS Auto Code Review/image2.png" alt="OCLint安装" /></p>
+
+<p>生成compile_commands.json文件有三种方式，oclint-xcodebuild、xcpretty、xctool，oclint-xcodebuild由于OCLint团队不再维护，xctool团队也说对高版本的Xcode不再支持，所以我们使用OCLint团队推荐的xcpretty，而且xcpretty编译更快。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install xcpretty
+</code></pre>
+</div>
+
+<h4 id="section-1">2. 使用</h4>
+<p>官方有详细的介绍<a href="http://docs.oclint.org/en/stable/guide/xcode.html">Using OCLint in Xcode</a>这里就贴出我使用的shell脚本吧。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>export LC_ALL="en_US.UTF-8"
+if [ -f ~/.bash_profile ]; then
+source ~/.bash_profile
+fi
+hash oclint &amp;&gt; /dev/null
+if [ $? -eq 1 ]; then
+echo &gt;&amp;2 "oclint not found, analyzing stopped"
+exit 1
+fi
+cd ${SRCROOT}
+xcodebuild -target target名 -configuration Debug -scheme scheme名 -dry-run | xcpretty -r json-compilation-database --output compile_commands.json
+oclint-json-compilation-database -- -report-type xcode
+</code></pre>
+</div>
+
+<h3 id="section-2">3. 规则的使用，以及自定义自己公司的规则</h3>
+<p>OCLint提供的规则<a href="http://docs.oclint.org/en/stable/rules/index.html">Rule Index</a>，截止目前一共71条。</p>
+
+<ul>
+  <li>忽略一写文件或者文件夹</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-e pods
+</code></pre>
+</div>
+
+<ul>
+  <li>禁用一些规则</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-disable-rule=InvertedLogic 
+-disable-rule=CollapsibleIfStatements \
+-disable-rule=UnusedMethodParameter \
+</code></pre>
+</div>
+
+<ul>
+  <li>更改一些规则的阈值</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>-rc=LONG_LINE=200
+-rc=NCSS_METHOD=100
+</code></pre>
+</div>
+
+<p><strong>对于自定义规则目前还没有研究，这个需要学习CMake以及Clang AST等等相关知识，只能待以后研究。</strong></p>
+
+<h2 id="swift">Swift</h2>
+
+<p><img src="/images/posts/iOS Auto Code Review/image3.png" alt="效果图" /></p>
+
+<h3 id="swiftlint">1. SwiftLint简单介绍</h3>
+
+<p>SwiftLint 是一个用于强制检查 Swift 代码风格和规定的一个工具，基本上以 GitHub’s Swift 代码风格指南为基础。</p>
+
+<p>SwiftLint Hook 了 Clang 和 SourceKit 从而能够使用 AST 来表示源代码文件的更多精确结果。</p>
+
+<h3 id="swiftlint-1">2. SwiftLint使用（安装到代码脚本配置）</h3>
+<p>使用 Homebrew 安装</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install swiftlint
+</code></pre>
+</div>
+
+<p>整合 SwiftLint 到 Xcode 体系中去从而可以使警告和错误显示到 IDE 上，只需要在 Xcode 中添加一个新的”Run Script Phase”并且包含如下代码即可：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>if which swiftlint &gt;/dev/null; then
+  swiftlint
+else
+  echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+fi
+</code></pre>
+</div>
+
+<h3 id="section-3">3. 规则的使用，以及自定义公司的规则</h3>
+
+<p>在控制台输入<code class="highlighter-rouge">swiftlint rules</code>可以看到当前所以的规则：</p>
+
+<p><img src="/images/posts/iOS Auto Code Review/image4.jpg" alt="SwiftLint当前的所以规则" /></p>
+
+<p>最好的方式是SwiftLint和<a href="https://github.com/kevindelord/swift-style-guide">Swift Style Guide</a>配合，执行下面这条命令（在项目根目录下）</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl https://raw.githubusercontent.com/kevindelord/swift-style-guide/master/.swiftlint.yml &gt; .swiftlint.yml
+</code></pre>
+</div>
+
+<p>这个文件里面你可以包含以下规则（只是部分）:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">disabled_rules</code>：关闭某些默认开启的规则</li>
+  <li><code class="highlighter-rouge">opt_in_rules</code>：一些规则是可选的</li>
+  <li><code class="highlighter-rouge">whitelist_rules</code>：不可以和<code class="highlighter-rouge">disabled_rules</code>或者<code class="highlighter-rouge">opt_in_rules</code>并列。类似一个白名单，只有在这个列表中的规则才是开启的。</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>disabled_rules: # 执行时排除掉的规则
+  - colon
+  - comma
+  - control_statement
+opt_in_rules: # 一些规则仅仅是可选的
+  - empty_count
+  - missing_docs
+  # 可以通过执行如下指令来查找所有可用的规则:
+  # swiftlint rules
+included: # 执行 linting 时包含的路径。如果出现这个 `--path` 会被忽略。
+  - Source
+excluded: # 执行 linting 时忽略的路径。 优先级比 `included` 更高。
+  - Carthage
+  - Pods
+  - Source/ExcludedFolder
+  - Source/ExcludedFile.swift
+# 可配置的规则可以通过这个配置文件来自定义
+# 二进制规则可以设置他们的严格程度
+force_cast: warning # 隐式
+force_try:
+  severity: warning # 显式
+# 同时有警告和错误等级的规则，可以只设置它的警告等级
+# 隐式
+line_length: 110
+</code></pre>
+</div>
+
+<p>可以用相应的语法自定义规则：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>  pirates_beat_ninjas: #规则标示符
+    name: "Pirates Beat Ninjas" #规则名称， 可选
+    regex: "([n,N]inja)" # 匹配的模式
+    match_kinds: # 需要匹配的语法类型， 可选
+      - comment
+      - identifier
+    message: "Pirates are better than ninjas." # 提示信息，可选
+    severity: error # 提示级别， 可选
+  no_hiding_in_strings:
+    regex: "([n,N]inja)"
+    match_kinds: string
+  no_chinese_word:
+    regex: "([\u4e00-\u9fa5])"
+    message: "不能有中文"
+    match_kinds: string
+    severity: error
+</code></pre>
+</div>
+
+<h2 id="objective-cswift">Objective-C和Swift混合项目</h2>
+
+<p>目前我是创建两个shell脚本来分别执行，如图</p>
+
+<p><img src="/images/posts/iOS Auto Code Review/image5.png" alt="效果图" /></p>
+
+<h2 id="section-4">参考引用</h2>
+
+<p><a href="http://oclint.org/">http://oclint.org/</a></p>
+
+<p><a href="https://github.com/realm/SwiftLint">https://github.com/realm/SwiftLint</a></p>
+
+<p><a href="http://kevindelord.io/2016/04/06/integrate-swiftlint/">http://kevindelord.io/2016/04/06/integrate-swiftlint/</a></p>
+
+<p><a href="https://shengpan.net/auto-code-review/">https://shengpan.net/auto-code-review/</a></p>
+
+
+  </section>
+</article>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2016/11/github-pages%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%85%8D%E8%B4%B9%E5%8D%9A%E5%AE%A2/" data-toggle="tooltip" data-placement="top" title="使用github pages搭建个人免费博客">上一篇：  <span>使用github pages搭建个人免费博客</span>
+            </a>
+        </li>
+        
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <div class="ds-thread" data-thread-key="/2016/12/iOS-Auto-Code-Review/" data-title="iOS Auto Code Review（本地）整理" data-url="https://yiweiwoshiniya.xyz/2016/12/iOS-Auto-Code-Review/"></div>
+
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"yiweiwoshiniya"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+  
+  
+  
+  
+</section>
+
+
+            <section class="footer">
+    <footer>
+        <div class = "footer_div">  
+        <nav class="cover-navigation navigation--social">
+          <ul class="navigation">
+
+          
+          <!-- Weibo -->
+          <li class="navigation__item_social">
+            <a href="http://weibo.com/yiweiwoshiniya" title="@yiweiwoshiniya 的微博" target="_blank">
+              <i class='social fa fa-weibo fa-2x'></i>
+              <span class="label">Weibo</span>
+            </a>
+          </li>
+          
+
+          
+          <!-- Github -->
+          <li class="navigation__item_social">
+            <a href="https://github.com/yiweiwoshiniya" title="@yiweiwoshiniya 的 Github" target="_blank">
+              <i class='social fa fa-github fa-2x'></i>
+              <span class="label">Github</span>
+            </a>
+          </li>
+          
+          
+          
+
+          
+
+          <!-- RSS -->
+          <li class="navigation__item_social">
+            <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+              <i class='social fa fa-rss fa-2x'></i>
+              <span class="label">RSS</span>
+            </a>
+          </li>
+
+          
+          <!-- Email -->
+          <li class="navigation__item_social">
+            <a href="mailto:yiweiwoshiniya@hotmail.co.uk" title="Contact me">
+              <i class='social fa fa-envelope fa-2x'></i>
+              <span class="label">Email</span>
+            </a>
+          </li>
+          
+
+          </ul>
+        </nav>
+
+        </div>
+
+        <div class = "footer_div">  
+           <p class="copyright text-muted">
+            Copyright &copy; Yiweiwoshiniya 2017 Theme by <a href="https://github.com/leopardpan/leopardpan.github.io/">leopardpan</a> |
+            <iframe
+                style="margin-left: 2px; margin-bottom:-5px;"
+                frameborder="0" scrolling="0" width="91px" height="20px"
+                src="https://ghbtns.com/github-btn.html?user=yiweiwoshiniya&repo=yiweiwoshiniya.github.io&type=star&count=true" >
+            </iframe>
+            </p>
+        	<div align="right">
+    			<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+          <span id="busuanzi_container_site_pv">
+            本站访问量
+              <span id="busuanzi_value_site_pv"></span>次
+          </span>
+          	</div>
+        <div>
+    </footer>
+</section>
+
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+
+
+    
+  </body>
+
+</html>
