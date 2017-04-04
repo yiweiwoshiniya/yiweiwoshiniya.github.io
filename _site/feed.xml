@@ -5,9 +5,50 @@
     <description>欢迎访问我的个人博客</description>
     <link>https://yiweiwoshiniya.xyz/</link>
     <atom:link href="https://yiweiwoshiniya.xyz/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Jan 2017 18:39:58 +0800</pubDate>
-    <lastBuildDate>Sun, 22 Jan 2017 18:39:58 +0800</lastBuildDate>
+    <pubDate>Tue, 04 Apr 2017 11:51:17 +0800</pubDate>
+    <lastBuildDate>Tue, 04 Apr 2017 11:51:17 +0800</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
+    
+      <item>
+        <title>iOS QQ分享、微信分享拼接appinstall参数</title>
+        <description>&lt;p&gt;标签： iOS、QQ、分享、appinstall&lt;/p&gt;
+
+&lt;p&gt;前几天开发，测试吐槽iOS分享链接到QQ，在QQ内打不开，当时找安卓同学发现没有问题，经过排查，发现QQ给自己的链接后面默认拼接了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;appinstall=0&lt;/code&gt;参数，查了腾讯开放平台，这个参数是QQ定向分享来判断是否安装了自己的软件。&lt;/p&gt;
+
+&lt;p&gt;但是这并不能解决问题，这个参数我是没有找到如何取消，不让拼接这个参数，但是问题得解决啊。和同事讨论后，从URL来看，下面是iOS NSURL的一些属性。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSNumber&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;password&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fragment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parameterString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nullable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;readonly&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;relativePath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// The same as path if baseURL is nil
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;我们分享的URL大致是这个样子的：&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.baidu.com/?name=test#!/index/color&lt;/code&gt;
+分享后：&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.baidu.com/?name=test#!/index/color&amp;amp;appinstall=0&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;仔细会发现，我们有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;name=test&lt;/code&gt;的参数，&lt;code class=&quot;highlighter-rouge&quot;&gt;#!/index/color&lt;/code&gt;这个是fragment，fragment用来定位跳转到本页面指定位置，例如：&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;p id=&quot;bottom&quot;&amp;gt;&lt;/code&gt; #号后面跟bottom，这个页面加载出来会自动跳转到bottom处。&lt;/p&gt;
+
+&lt;p&gt;问题就跟fragment有关，分享前是：&lt;code class=&quot;highlighter-rouge&quot;&gt;#!/index/color&lt;/code&gt;，分享后：&lt;code class=&quot;highlighter-rouge&quot;&gt;#!/index/color&amp;amp;appinstall=0&lt;/code&gt;。浏览器默认将#后面的都当成了fragment，所以导致页面加载没有问题，就是定位不到位置，所以显示不出来。&lt;/p&gt;
+
+&lt;p&gt;最后问题解决就是让同事在分享前后面拼接一个？。&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.baidu.com/?name=test#!/index/color？&lt;/code&gt;。这样QQ如果拼接上，那么浏览器会&lt;code class=&quot;highlighter-rouge&quot;&gt;appinstall=0&lt;/code&gt;解析成请求参数。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;结尾&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;如果有知道好的解决方案，求告知。问题就是链接被拼接了一个参数后解析错误，自己对这方面不是很了解，自己的想法，将fragment放到host后面和请求参数换一个顺序，请求参数放到链接最后面，这样不管怎么拼接参数都没有问题。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 04 Apr 2017 00:00:00 +0800</pubDate>
+        <link>https://yiweiwoshiniya.xyz/2017/04/iOS-QQ%E5%88%86%E4%BA%AB-%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E6%8B%BC%E6%8E%A5appinstall%E5%8F%82%E6%95%B0/</link>
+        <guid isPermaLink="true">https://yiweiwoshiniya.xyz/2017/04/iOS-QQ%E5%88%86%E4%BA%AB-%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E6%8B%BC%E6%8E%A5appinstall%E5%8F%82%E6%95%B0/</guid>
+        
+        <category>博客</category>
+        
+        
+      </item>
     
       <item>
         <title>iOS Auto Code Review（本地）整理</title>
